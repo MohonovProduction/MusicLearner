@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Terms</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="app" class="app">
+		<button class="question" v-on:click="getTerm">Термин</button>
+		{{term}}
+		<div class="ansver">
+			<input type="text" name="">
+			<button>Не знаете?</button>
+		</div>
+		<button v-on:click="chekAnswer">{{answers[0]}}</button>
+		<button v-on:click="chekAnswer">{{answers[1]}}</button>
+		<button v-on:click="chekAnswer">{{answers[2]}}</button>
+		<button v-on:click="chekAnswer">{{answers[3]}}</button>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
