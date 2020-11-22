@@ -34,12 +34,14 @@ let app = new Vue ({
 			'',
 			'',
 			''
-		]
+		],
+		stat: ''
 	},
 	methods: {
 		getTerm: function () {
 			let randomNumber = random(this.terms.length)
 			let randomAnswer = random(4)
+			stat = ''
 
 			this.term = this.terms[randomNumber].term 
 			this.answer = this.terms[randomNumber].transleate 
@@ -52,8 +54,41 @@ let app = new Vue ({
 				}
 			}
 		},
-		chekAnswer: function () {
+		chekAnswer0: function () {
+			let textAnsver = document.querySelector('#v0').textContent
+
+			if (textAnsver == this.answer) {
+				this.stat = 'good'
+			} else {
+				this.stat = 'bad'
+			}
+		},
+		chekAnswer1: function () {
+			let textAnsver = document.querySelector('#v1').textContent
 			
+			if (textAnsver == this.answer) {
+				this.stat = 'good'
+			} else {
+				this.stat = 'bad'
+			}
+		},
+		chekAnswer2: function () {
+			let textAnsver = document.querySelector('#v2').textContent
+			
+			if (textAnsver == this.answer) {
+				this.stat = 'good'
+			} else {
+				this.stat = 'bad'
+			}
+		},
+		chekAnswer3: function () {
+			let textAnsver = document.querySelector('#v3').textContent
+			
+			if (textAnsver == this.answer) {
+				this.stat = 'good'
+			} else {
+				this.stat = 'bad'
+			}
 		}
 	}
 })

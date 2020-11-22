@@ -8,15 +8,15 @@
 <body>
 	<div id="app" class="app">
 		<button class="question" v-on:click="getTerm">Термин</button>
-		{{term}}
 		<div class="ansver">
-			<input type="text" name="">
+			<p>{{stat}}</p>
+			<p>{{term}}</p>
 			<button>Не знаете?</button>
 		</div>
-		<button v-on:click="chekAnswer">{{answers[0]}}</button>
-		<button v-on:click="chekAnswer">{{answers[1]}}</button>
-		<button v-on:click="chekAnswer">{{answers[2]}}</button>
-		<button v-on:click="chekAnswer">{{answers[3]}}</button>
+		<button v-on:click="chekAnswer0" id="v0">{{answers[0]}}</button>
+		<button v-on:click="chekAnswer1" id="v1">{{answers[1]}}</button>
+		<button v-on:click="chekAnswer2" id="v2">{{answers[2]}}</button>
+		<button v-on:click="chekAnswer3" id="v3">{{answers[3]}}</button>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 	<script src="app.js"></script>
