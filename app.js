@@ -30,10 +30,10 @@ let app = new Vue ({
 		answer: '0',
 		randomNumber: 0,
 		answers: [
-			'a',
-			'b',
-			'c',
-			'd'
+			'',
+			'',
+			'',
+			''
 		]
 	},
 	methods: {
@@ -46,10 +46,9 @@ let app = new Vue ({
 
 			this.answers[randomAnswer] = this.answer
 
-			for (let item in this.answers[randomAnswer]) { 
-				if (item != this.answers[randomAnswer]) {
+			for (let item in this.answers) { 
+				if (this.answers[item] != this.answer) {
 					this.answers[item] = this.terms[random(this.terms.length)].transleate
-					console.log(this.answers[item])
 				}
 			}
 		},
