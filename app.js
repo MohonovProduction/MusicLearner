@@ -27,7 +27,7 @@ let app = new Vue ({
 				transleate: 't5',
 			}
 		],
-		term: '',
+		term: 'Click for studing',
 		answer: '0',
 		randomNumber: 0,
 		answers: [
