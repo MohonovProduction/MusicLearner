@@ -6,26 +6,12 @@ let app = new Vue ({
 	el: '#app',
 	data: {
 		terms: [
-			{	
-				term: '1',
-				transleate: 't1'
-			},
-			{
-				term: '2',
-				transleate: 't2',
-			},
-			{
-				term: '3',
-				transleate: 't3',
-			},
-			{
-				term: '4',
-				transleate: 't4',
-			},
-			{
-				term: '5',
-				transleate: 't5',
-			}
+			{ term: 'allegro', transleate: 'скоро' },
+			{ term: 'adagio', transleate: 'медленно' },
+			{ term: 'andante', transleate: 'спокойным шагом' },
+			{ term: 'ritenuto', transleate: 'сдерживая' },
+			{ term: 'a tempo', transleate: 'в темпе' },
+			{ term: 'allegro', transleate: 'скоро' },
 		],
 		term: 'Click for studing',
 		answer: '0',

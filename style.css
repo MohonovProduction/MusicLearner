@@ -23,6 +23,11 @@ body {
 		box-shadow: 0 10px 15px #ccc;
 		transition: 0.3s;
 	}
+	.term {
+		font-family: 'Castoro', serif;
+		font-style: italic;
+		font-size: 2em;
+	}
 
 	.good {
 		border: 5px solid #0f0;
