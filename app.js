@@ -23,7 +23,7 @@ let app = new Vue ({
 			''
 		],
 		stat: '',
-		card: document.querySelector('.ansver') 
+		card: document.querySelector('.answer') 
 	},
 	methods: {
 		/* Get terms */
@@ -31,9 +31,9 @@ let app = new Vue ({
 			let randomNumber = random(this.terms.length)
 			let randomAnswer = random(4)
 			this.stat = ''
-			document.querySelector('.ansver').classList.add('neutral')
-			document.querySelector('.ansver').classList.remove('good')
-			document.querySelector('.ansver').classList.remove('bad')
+			document.querySelector('.answer').classList.add('neutral')
+			document.querySelector('.answer').classList.remove('good')
+			document.querySelector('.answer').classList.remove('bad')
 			document.querySelector('.variants').style.display = 'flex'
 
 			this.term = this.terms[randomNumber].term 
@@ -50,24 +50,24 @@ let app = new Vue ({
 
 		/* Buttons */
 		chekAnswer0: function () {
-			let textAnsver = document.querySelector('#v0').textContent
+			let textAnswer = document.querySelector('#v0').textContent
 
-			this.chekAnswer(textAnsver)
+			this.chekAnswer(textAnswer)
 		},
 		chekAnswer1: function () {
-			let textAnsver = document.querySelector('#v1').textContent
+			let textAnswer = document.querySelector('#v1').textContent
 			
-			this.chekAnswer(textAnsver)
+			this.chekAnswer(textAnswer)
 		},
 		chekAnswer2: function () {
-			let textAnsver = document.querySelector('#v2').textContent
+			let textAnswer = document.querySelector('#v2').textContent
 			
-			this.chekAnswer(textAnsver)
+			this.chekAnswer(textAnswer)
 		},
 		chekAnswer3: function () {
-			let textAnsver = document.querySelector('#v3').textContent
+			let textAnswer = document.querySelector('#v3').textContent
 
-			this.chekAnswer(textAnsver)
+			this.chekAnswer(textAnswer)
 		},
 
 		/* Check function */
@@ -75,14 +75,14 @@ let app = new Vue ({
 
 			if (text == this.answer) {
 				this.stat = 'good'
-				document.querySelector('.ansver').classList.remove('bad')
-				document.querySelector('.ansver').classList.remove('neutral')
-				document.querySelector('.ansver').classList.add('good')
+				document.querySelector('.answer').classList.remove('bad')
+				document.querySelector('.answer').classList.remove('neutral')
+				document.querySelector('.answer').classList.add('good')
 				setTimeout(this.getTerm, 2000)
 			} else {
 				this.stat = 'bad'
-				document.querySelector('.ansver').classList.remove('neutral')
-				document.querySelector('.ansver').classList.add('bad')
+				document.querySelector('.answer').classList.remove('neutral')
+				document.querySelector('.answer').classList.add('bad')
 			}
 		} 
 	}

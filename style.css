@@ -8,7 +8,7 @@ body {
 	margin-top: 20px;
 }
 /* Card */
-	.ansver {
+	.answer {
 		display: flex;
 		flex-direction: column;
 		position: relative;
@@ -19,10 +19,11 @@ body {
 		box-shadow: 0 5px 10px #ccc;
 		transition: 0.3s;
 	}
-	.ansver:hover {
+	.answer:hover {
 		box-shadow: 0 10px 15px #ccc;
 		transition: 0.3s;
 	}
+	
 	.term {
 		font-family: 'Castoro', serif;
 		font-style: italic;
