@@ -2,6 +2,13 @@ let random = function (k) {
 	return(Math.floor(Math.random() * k))
 }
 
+let shuffle = function (array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 let app = new Vue ({
 	el: '#app',
 	data: {
@@ -10,70 +17,77 @@ let app = new Vue ({
 			{ term: 'adagio', transleate: 'медленно' },
 			{ term: 'andante', transleate: 'спокойным шагом' },
 			{ term: 'ritenuto', transleate: 'сдерживая' },
-			{ term: 'a tempo', transleate: 'в темпе' },
-			{ term: 'allegro', transleate: 'скоро' },
+			{ term: 'a tempo', transleate: 'в темпе' }
 		],
 		term: 'Click for studing',
-		answer: '0',
-		randomNumber: 0,
+		answer: '',
 		answers: [
 			'',
 			'',
 			'',
 			''
 		],
-		stat: '',
-		card: document.querySelector('.answer') 
+		stat: ''
 	},
 	methods: {
 		/* Get terms */
 		getTerm: function () {
-			let randomNumber = random(this.terms.length)
-			let randomAnswer = random(4)
 			this.stat = ''
 			document.querySelector('.answer').classList.add('neutral')
 			document.querySelector('.answer').classList.remove('good')
 			document.querySelector('.answer').classList.remove('bad')
 			document.querySelector('.variants').style.display = 'flex'
 
-			this.term = this.terms[randomNumber].term 
-			this.answer = this.terms[randomNumber].transleate 
+			for (let i = 0; i < 4; i++) {
+			   	let randomNumber = random(this.terms.length - i) + i
+			   	let element = NaN; 
 
-			this.answers[randomAnswer] = this.answer
+			   	element = this.terms[randomNumber]
+			   	this.terms[randomNumber] = this.terms[i]
+			   	this.terms[i] = element
+			   	this.answers[i] = element
+			}
+
+			let randomAnswer = random(4)
+
+			this.answer = this.answers[randomAnswer]
+			this.term = this.answer.term
 
 			for (let item in this.answers) { 
 				if (this.answers[item] != this.answer) {
-					this.answers[item] = this.terms[random(this.terms.length)].transleate
+					this.answers[item] = this.answers[item].transleate
 				}
 			}
+
+			this.answers[randomAnswer] = this.answers[randomAnswer].transleate
 		},
+		
 
 		/* Buttons */
-		chekAnswer0: function () {
+		checkAnswer0: function () {
 			let textAnswer = document.querySelector('#v0').textContent
 
-			this.chekAnswer(textAnswer)
+			this.checkAnswer(textAnswer)
 		},
-		chekAnswer1: function () {
+		checkAnswer1: function () {
 			let textAnswer = document.querySelector('#v1').textContent
 			
-			this.chekAnswer(textAnswer)
+			this.checkAnswer(textAnswer)
 		},
-		chekAnswer2: function () {
+		checkAnswer2: function () {
 			let textAnswer = document.querySelector('#v2').textContent
 			
-			this.chekAnswer(textAnswer)
+			this.checkAnswer(textAnswer)
 		},
-		chekAnswer3: function () {
+		checkAnswer3: function () {
 			let textAnswer = document.querySelector('#v3').textContent
 
-			this.chekAnswer(textAnswer)
+			this.checkAnswer(textAnswer)
 		},
 
 		/* Check function */
-		chekAnswer: function (text) {
-
-			if (text == this.answer) {
+		checkAnswer: function (text) {
+			if (text == this.answer.transleate) {
 				this.stat = 'good'
 				document.querySelector('.answer').classList.remove('bad')
 				document.querySelector('.answer').classList.remove('neutral')
