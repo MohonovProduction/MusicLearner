@@ -34,6 +34,9 @@ let app = new Vue ({
 			styleSetUp = [0,0,0,0,0]
 			this.terms = shuffle(this.terms)
 			console.log(this.terms)
+		},
+		checkAnswer: function () {
+			
 		}
 	}
 })
