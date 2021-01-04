@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Terms</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<div id="app" class="app">
-		<div class="answer neutral" v-on:click="getTerm">
-			<p class="term">{{term}}</p>
-			<p class="stat">{{stat}}</p>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id="app" class="app">
+			<p class="card">Lorem is epum</p>
+
+			<div class="buttons">
+				<button class="button">dolor</button>
+				<button class="button">sit</button>
+				<button class="button">amet</button>
+				<button class="button">consectedur</button>
+			</div>
 		</div>
-		<div class="variants">
-			<button v-on:click="checkAnswer0" id="v0" class="button">{{answers[0]}}</button>
-			<button v-on:click="checkAnswer1" id="v1" class="button">{{answers[1]}}</button>
-			<button v-on:click="checkAnswer2" id="v2" class="button">{{answers[2]}}</button>
-			<button v-on:click="checkAnswer3" id="v3" class="button">{{answers[3]}}</button>
-		</div>
-	</div>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-	<script src="app.js"></script>
-</body>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<script src="app.js"></script>
+	</body>
 </html>
