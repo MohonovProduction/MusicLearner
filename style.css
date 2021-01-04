@@ -1,70 +1,77 @@
-body {
-	font-family: sans-serif;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-.app {
-	margin-top: 20px;
-}
-/* Card */
-	.answer {
-		display: flex;
-		flex-direction: column;
-		position: relative;
-		align-items: center;
-		justify-content: center;
-		width: 30vw;
-		height: 30vh;
-		box-shadow: 0 5px 10px #ccc;
-		transition: 0.3s;
+/* main */
+	* {
+		font-family: 'Castoro', serif;;
 	}
-	.answer:hover {
-		box-shadow: 0 10px 15px #ccc;
+	body {
+		display: flex;
+		justify-content: center;
+		margin: 0px;
+		background: hsl(47, 95%, 95%);
+	}
+
+/* app */
+	.app {
+		width: 500px;
+	}
+
+	.card {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 500px;
+		height: 300px;	
+		font-style: italic;
+		font-size: 3em;
+		background: #fff;
 		transition: 0.3s;
+		box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
 	}
 	
-	.term {
-		font-family: 'Castoro', serif;
-		font-style: italic;
-		font-size: 2em;
+	.card:hover {
+		cursor: pointer;
+		transform: translate(-5px, -5px);
+		box-shadow: 15px 15px 0px 0px hsl(47, 95%, 70%);
+		transition: 0.3s;
 	}
 
-	.good {
-		border: 5px solid #0f0;
+	.buttons {
+		display: flex;
+		flex-direction: column;
 	}
-	.bad {
-		border: 5px solid #f00;
+	.button {
+		position: relative;
+		appearance: none;
+		user-select: none;
+		border-radius: 0px;
+		border: none;
+		background: #fff;
+		outline: none;
+
+		margin-top: 25px;
+		padding: 10px;
+		font-size: 1.5em;
+		box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
+		transition: 0.3s;
 	}
-	.neutral {
-		border: 5px solid #fff;
+	.button:hover {
+		cursor: pointer;
+		transform: translate(-5px, -5px);
+		box-shadow: 10px 10px 0px 0px hsl(47, 95%, 70%);
+		transition: 0.3s;
 	}
 
+	.correct {
+		box-shadow: 5px 5px 0px 0px hsl(104, 66%, 67%);
+	}
+	.correct:hover {
+		box-shadow: 15px 15px 0px 0px hsl(104, 66%, 67%);
+	}
+	.incorrect {
+		box-shadow: 5px 5px 0px 0px hsl(347, 82%, 41%);
+	}
+	.incorrect:hover {
+		box-shadow: 15px 15px 0px 0px hsl(347, 82%, 41%);
+	}
 
+/* menu */
 
-.stat {
-	position: absolute;
-	right: 10px;
-	bottom: 10px;
-}
-.variants {
-	display: none;
-	flex-direction: column;
-	justify-content: space-around;
-	margin-top: 20px;
-}
-.variants .button {
-	margin-top: 10px;
-	padding: 5px 0px;
-	background: #fff;
-	border: 3px solid #00005b;
-	user-select: none;
-	outline: none;
-	cursor: pointer;
-}
-.variants .button:hover {
-	border: 3px solid #00005b;
-}
-.variants .button:active {
-	border: 3px solid #00005b;
-}
