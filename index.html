@@ -10,7 +10,7 @@
 			<p v-bind:class="{card: true, correct: styleSetUp[4] == 1, incorrect: styleSetUp[4] == 2}" v-on:click="genTerm">{{term}}</p>
 
 			<div class="buttons">
-				<button v-bind:class="{button: true, correct: styleSetUp[id] == 1, incorrect: styleSetUp[id] == 2}" v-for="(option, id) in options">{{option}}</button>
+				<button v-bind:class="{button: true, correct: styleSetUp[id] == 1, incorrect: styleSetUp[id] == 2}" v-for="(option, id) of options">{{ options[id] }}</button>
 			</div>
 		</div>
 

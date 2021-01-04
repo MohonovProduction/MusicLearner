@@ -32,11 +32,17 @@ let app = new Vue ({
 	methods: {
 		genTerm: function () {
 			styleSetUp = [0,0,0,0,0]
+
 			this.terms = shuffle(this.terms)
-			console.log(this.terms)
+			
+			for (let i = this.options.length - 1; i >= 0; i--) {
+				Vue.set(this.options, i, this.terms[i].transleate)
+			}
+
+			
 		},
 		checkAnswer: function () {
-			
+
 		}
 	}
 })
