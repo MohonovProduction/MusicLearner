@@ -1,6 +1,6 @@
 /* main */
 	* {
-		font-family: 'Castoro', serif;;
+		font-family: 'Georgia Pro', serif;;
 	}
 	body {
 		display: flex;
@@ -72,7 +72,7 @@
 	.incorrect:hover {
 		box-shadow: 15px 15px 0px 0px hsl(347, 82%, 41%);
 	}
-
+	
 	.fade-enter-active {
 		transition: opacity .5s;
 	}
