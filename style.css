@@ -1,14 +1,19 @@
 /* main */
-	* {
-		font-family: 'Georgia Pro', serif;;
-	}
 	body {
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		height: 100%;
 		margin: 0px;
 		background: hsl(47, 95%, 95%);
+		font-family: 'Georgia Pro', serif;
 	}
-
+	main {
+		margin-bottom: 150px;
+		height: auto;
+		min-height: 100%;
+	}
 /* app */
 	.app {
 		width: 500px;
@@ -82,3 +87,48 @@
 
 /* menu */
 
+/* footer */
+	footer {
+		margin-top: -150px; 
+		height: 100px;
+		clear: both;
+		margin-top: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: #fff;
+		width: 100vw;
+		padding: 10px;
+	}
+
+	ul.footer {
+		display: flex;
+		flex-direction: row;
+		list-style: none;
+	}
+	li.footer {
+		margin: 5px 10px;
+		font-family: sans-serif;
+	}
+
+	.footer a:link {
+		color: #000;
+		text-decoration: none;
+		opacity: 0.5;
+		transition: 0.3s;
+	}
+	.footer a:visited {
+		color: #000;
+		opacity: 1;
+		transition: 0.3s;
+	}
+	.footer a:hover {
+		opacity: 1;
+		transition: 0.3s;
+	}
+	.footer a:active {
+		opacity: 1;
+		transition: 0.3s;
+	}
+	
