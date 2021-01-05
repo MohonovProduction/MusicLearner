@@ -20,29 +20,36 @@ let app = new Vue ({
 			{ term: 'ritenuto', transleate: 'сдерживая' },
 			{ term: 'a tempo', transleate: 'в темпе' }
 		],
-		term: '',
+		term: 'sample output',
 		options: [
 			'sample output',
 			'sample output',
 			'sample output',
 			'sample output'
 		],
-		styleSetUp: [0,0,1,2,0]
+		styleSetUp: [0,0,1,2,0],
+		answerOptions: [],
+		answer: {},
 	},
 	methods: {
 		genTerm: function () {
-			styleSetUp = [0,0,0,0,0]
+			this.styleSetUp = [0,0,0,0,0]
 
 			this.terms = shuffle(this.terms)
-			
-			for (let i = this.options.length - 1; i >= 0; i--) {
-				Vue.set(this.options, i, this.terms[i].transleate)
+			this.answerOptions = this.terms.slice(0, 4)
+			this.answer = this.answerOptions[random(this.answerOptions.length)]
+			this.term = this.answer.term
+
+			for (let i = this.answerOptions.length - 1; i >= 0; i--) {
+				Vue.set(this.options, i, this.answerOptions[i].transleate)
 			}
-
-			
 		},
-		checkAnswer: function () {
-
+		checkAnswer: function (id) {
+			if (this.answer == this.answerOptions[id]) {
+				Vue.set(this.styleSetUp, id, 1)
+				Vue.set(this.styleSetUp, 4, 1)
+				setTimeout(this.genTerm, 2000)
+			}
 		}
 	}
 })
