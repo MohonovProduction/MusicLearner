@@ -13,6 +13,7 @@ function shuffle(array) {
 let app = new Vue ({
 	el: '#app',
 	data: {
+		show: false,
 		terms: [
 			{ term: 'allegro', transleate: 'скоро' },
 			{ term: 'adagio', transleate: 'медленно' },
@@ -20,19 +21,20 @@ let app = new Vue ({
 			{ term: 'ritenuto', transleate: 'сдерживая' },
 			{ term: 'a tempo', transleate: 'в темпе' }
 		],
-		term: 'sample output',
+		term: 'Click to learn',
 		options: [
-			'sample output',
-			'sample output',
-			'sample output',
-			'sample output'
+			'',
+			'',
+			'',
+			''
 		],
-		styleSetUp: [0,0,1,2,0],
+		styleSetUp: [0,0,0,0,0],
 		answerOptions: [],
 		answer: {},
 	},
 	methods: {
 		genTerm: function () {
+			this.show = true
 			this.styleSetUp = [0,0,0,0,0]
 
 			this.terms = shuffle(this.terms)
@@ -48,7 +50,10 @@ let app = new Vue ({
 			if (this.answer == this.answerOptions[id]) {
 				Vue.set(this.styleSetUp, id, 1)
 				Vue.set(this.styleSetUp, 4, 1)
-				setTimeout(this.genTerm, 2000)
+				setTimeout(this.genTerm, 1000)
+			} else {
+				Vue.set(this.styleSetUp, id, 2)
+				Vue.set(this.styleSetUp, 4, 2)
 			}
 		}
 	}
