@@ -46,26 +46,26 @@ let app = new Vue ({
 				{term: 'stringendo', transleate: 'ускоряя'},
 			],
 			tocco: [
-				{term: 'detache', transleate: 'раздельно'},
-				{term: 'legato', transleate: 'связно'},
-				{term: 'staccato', transleate: 'отрывисто'},
-				{term: 'marcato', transleate: 'подчёркивая'},
-				{term: 'non legato', transleate: 'не связно'},
-				{term: 'portamento', transleate: 'протяжно но не связно'},
-				{term: 'tenuto', transleate: 'выдержанно'},
-				{term: 'glissando', transleate: 'скользя'},
+				{term: 'detache', transleate: 'раздельно', symbol: 'img/tocco/Music-detache.svg'},
+				{term: 'legato', transleate: 'связно', symbol: 'img/tocco/Music-legato.svg'},
+				{term: 'staccato', transleate: 'отрывисто', symbol: 'img/tocco/Music-staccato.svg'},
+				{term: 'marcato', transleate: 'подчёркивая', symbol: 'img/tocco/Music-marcato.svg'},
+				{term: 'non legato', transleate: 'не связно', symbol: 'img/tocco/Music-non-legato.svg'},
+				{term: 'portamento', transleate: 'протяжно но не связно', symbol: 'img/tocco/Music-portamento.svg'},
+				{term: 'tenuto', transleate: 'выдержанно', symbol: 'img/tocco/Music-tenuto.svg'},
+				{term: 'glissando', transleate: 'скользя', symbol: 'img/tocco/Music-glissando.svg'},
 			],
 			dinamica: [
-				{term: 'forte', transleate: 'громко', symbol: 'img/Music-forte.svg'},
-				{term: 'piano', transleate: 'тихо', symbol: 'img/Music-piano.svg'},
-				{term: 'mezzo forte', transleate: 'не очень громко', symbol: 'img/Music-mezzoforte.svg'},
-				{term: 'mezzo piano', transleate: 'не очень тихо', symbol: 'img/Music-mezzopiano.svg'},
-				{term: 'crecsendo', transleate: 'усиливая', symbol: 'img/Music-crescendo.svg'},
-				{term: 'diminuendo', transleate: 'стихая', symbol: 'img/Music-diminuendo.svg'},
-				{term: '>', transleate: 'акцент'},
-				{term: 'sforzando', transleate: 'внезапное ударение', symbol: 'img/Sfz.svg'},
-				{term: 'fortissimo', transleate: 'очень громко', symbol: 'img/Music-fortissimo.svg'},
-				{term: 'pianissimo', transleate: 'очень тихо', symbol: 'img/Music-pianissimo.svg'},
+				{term: 'forte', transleate: 'громко', symbol: 'img/dinamica/Music-forte.svg'},
+				{term: 'piano', transleate: 'тихо', symbol: 'img/dinamica/Music-piano.svg'},
+				{term: 'mezzo forte', transleate: 'не очень громко', symbol: 'img/dinamica/Music-mezzoforte.svg'},
+				{term: 'mezzo piano', transleate: 'не очень тихо', symbol: 'img/dinamica/Music-mezzopiano.svg'},
+				{term: 'crecsendo', transleate: 'усиливая', symbol: 'img/dinamica/Music-crescendo.svg'},
+				{term: 'diminuendo', transleate: 'стихая', symbol: 'img/dinamica/Music-diminuendo.svg'},
+				{term: 'marcato', transleate: 'акцент', symbol: 'img/dinamica/Music-marcato.svg'},
+				{term: 'sforzando', transleate: 'внезапное ударение', symbol: 'img/dinamica/Sfz.svg'},
+				{term: 'fortissimo', transleate: 'очень громко', symbol: 'img/dinamica/Music-fortissimo.svg'},
+				{term: 'pianissimo', transleate: 'очень тихо', symbol: 'img/dinamica/Music-pianissimo.svg'},
 				{term: 'piu forte', transleate: 'более громко'},
 				{term: 'meno forte', transleate: 'менее громко'},
 				{term: 'poco', transleate: 'немного'},
@@ -73,7 +73,14 @@ let app = new Vue ({
 				{term: 'poco a poco diminuendo', transleate: 'мало-помалу стихая'},
 			],
 			simbolo: [
-
+				{term: 'реприза', transleate: 'повторение', symbol: 'img/simbolo/Music-repeat.png'},
+				{term: '', transleate: 'за первым разом на первую вольту, за вторым на вторую', symbol: 'img/simbolo/Music-volte.svg'},
+				{term: 'fermata', transleate: 'остановка', symbol: 'img/simbolo/Music-fermata.svg'},
+				{term: 'Fine', transleate: 'финал, конец'},
+				{term: '', transleate: 'повторение предыдущего такта', symbol: 'img/simbolo/Music-simile.png'},
+				{term: 'Da capo al fine', transleate: 'с начала до слова «Конец»'},
+				{term: 'Segno', transleate: 'сеньо - знак', symbol: 'img/simbolo/Music-segno.png'},
+				{term: 'Lanterna', transleate: 'фонарь - знак', symbol: 'img/simbolo/Coda_sign.svg'}
 			],
 			natura: [
 				{term: 'dolche', transleate: 'нежно'},
@@ -114,8 +121,8 @@ let app = new Vue ({
 	},
 	methods: {
 		genTerm: function () {
-			/*this.terms = this.terms.concat(this.termsBase.tempo, this.termsBase.tocco, this.termsBase.dinamica, this.termsBase.natura)*/
-			this.terms = this.terms.concat(this.termsBase.dinamica)
+			this.terms = []
+			this.terms = this.terms.concat(this.termsBase.tempo, this.termsBase.tocco, this.termsBase.dinamica, this.termsBase.natura)
 
 			this.show = true
 			this.styleSetUp = [0,0,0,0,0]
