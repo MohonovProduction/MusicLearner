@@ -122,7 +122,7 @@ let app = new Vue ({
 	methods: {
 		genTerm: function () {
 			this.terms = []
-			this.terms = this.terms.concat(this.termsBase.tempo, this.termsBase.tocco, this.termsBase.dinamica, this.termBase.simbolo, this.termsBase.natura)
+			this.terms = this.terms.concat(this.termsBase.tempo, this.termsBase.tocco, this.termsBase.dinamica, this.termsBase.simbolo, this.termsBase.natura)
 
 			this.show = true
 			this.styleSetUp = [0,0,0,0,0]
