@@ -81,8 +81,6 @@ var terms = {
 		{term: 'subito', transleate: 'внезапно'},
 		{term: 'brilliante', transleate: 'блестяще'},
 		{term: 'energico', transleate: 'энергично'},
-		{term: '', transleate: ''},
-		{term: '', transleate: ''},
 	]
 }
 var array = terms.tempo.concat(terms.natura)

@@ -113,7 +113,16 @@ let app = new Vue ({
 	},
 	methods: {
 		genTerm: function () {
-			this.terms = this.terms.concat(this.termsBase.tempo, this.termsBase.tocco, this.termsBase.dinamica, this.termsBase.natura)
+			/*this.terms = this.terms.concat(this.termsBase.tempo, this.termsBase.tocco, this.termsBase.dinamica, this.termsBase.natura)*/
+			this.terms = [
+				{terms:'a', transleate: 'ay'},
+				{terms:'b', transleate: 'be'},
+				{terms:'c', transleate: function (id) {
+					let answer = document.querySelectorAll('.button')
+					console.log(answer)
+				}},
+				{terms:'d', transleate: 'de'}
+			]
 			this.show = true
 			this.styleSetUp = [0,0,0,0,0]
 
