@@ -16,7 +16,7 @@
 
 	.card {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		width: 500px;
@@ -34,17 +34,12 @@
 		transition: 0.3s;
 	}
 
-	.term {
-		font-style: italic;
-	}
 	img.term {
-
-	}
-	b.term {
-		margin-right: 20px;
-		font-size: 3em;
+		width: 100px;
 	}
 	p.term {
+		margin: 0px;
+		font-style: italic;
 		font-size: 2.5em;
 	}
 

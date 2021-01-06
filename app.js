@@ -56,16 +56,16 @@ let app = new Vue ({
 				{term: 'glissando', transleate: 'скользя'},
 			],
 			dinamica: [
-				{term: 'forte', transleate: 'громко', symbol: 'f'},
-				{term: 'piano', transleate: 'тихо', symbol: 'p'},
-				{term: 'mezzo forte', transleate: 'не очень громко', symbol: 'mf'},
-				{term: 'mezzo piano', transleate: 'не очень тихо', symbol: 'mp'},
+				{term: 'forte', transleate: 'громко', symbol: 'img/Music-forte.svg'},
+				{term: 'piano', transleate: 'тихо', symbol: 'img/Music-piano.svg'},
+				{term: 'mezzo forte', transleate: 'не очень громко', symbol: 'img/Music-mezzoforte.svg'},
+				{term: 'mezzo piano', transleate: 'не очень тихо', symbol: 'img/Music-mezzopiano.svg'},
 				{term: 'crecsendo', transleate: 'усиливая'},
 				{term: 'diminuendo', transleate: 'стихая'},
 				{term: '>', transleate: 'акцент'},
-				{term: '', transleate: 'внезапное ударение', symbol: 'sf'},
-				{term: '', transleate: 'очень громко', symbol: 'ff'},
-				{term: '', transleate: 'очень тихо', symbol: 'pp'},
+				{term: 'sforzando', transleate: 'внезапное ударение', symbol: 'img/Sfz.svg'},
+				{term: 'fortissimo', transleate: 'очень громко', symbol: 'img/Music-fortissimo.svg'},
+				{term: 'pianissimo', transleate: 'очень тихо', symbol: 'img/Music-pianissimo.svg'},
 				{term: 'piu forte', transleate: 'более громко'},
 				{term: 'meno forte', transleate: 'менее громко'},
 				{term: 'poco', transleate: 'немного'},
@@ -102,7 +102,6 @@ let app = new Vue ({
 		},
 		term: 'Click to learn',
 		termSymbol: '',
-		termIllustration: '',
 		options: [
 			'',
 			'',
@@ -126,7 +125,6 @@ let app = new Vue ({
 			this.answer = this.answerOptions[random(this.answerOptions.length)]
 			this.term = this.answer.term
 			this.termSymbol = this.answer.symbol
-			this.termIllustration = this.answer.illustration
 
 			for (let i = this.answerOptions.length - 1; i >= 0; i--) {
 				Vue.set(this.options, i, this.answerOptions[i].transleate)
