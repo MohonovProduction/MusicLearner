@@ -4,16 +4,11 @@
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
-		height: 100%;
 		margin: 0px;
 		background: hsl(47, 95%, 95%);
 		font-family: 'Georgia Pro', serif;
 	}
-	main {
-		margin-bottom: 150px;
-		height: auto;
-		min-height: 100%;
-	}
+
 /* app */
 	.app {
 		width: 500px;
@@ -87,19 +82,25 @@
 
 /* menu */
 
+/* header */
+header {
+	width: 100vw;		
+	text-align: center;
+	font-size: 1em;
+	background: hsl(0, 100%, 86%);
+	color: hsl(0, 100%, 25%);
+}
+
 /* footer */
-	footer {
-		margin-top: -150px; 
+	footer { 
 		height: 100px;
 		clear: both;
-		margin-top: 100px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		background: #fff;
 		width: 100vw;
-		padding: 10px;
 	}
 
 	ul.footer {
