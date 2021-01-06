@@ -83,5 +83,3 @@ var terms = {
 		{term: 'energico', transleate: 'энергично'},
 	]
 }
-var array = terms.tempo.concat(terms.natura)
-console.log(array) 

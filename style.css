@@ -16,12 +16,12 @@
 
 	.card {
 		display: flex;
+		flex-direction: row;
 		justify-content: center;
 		align-items: center;
 		width: 500px;
 		height: 300px;	
-		font-style: italic;
-		font-size: 3em;
+		padding: 10px;
 		background: #fff;
 		transition: 0.3s;
 		box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
@@ -32,6 +32,20 @@
 		transform: translate(-5px, -5px);
 		box-shadow: 15px 15px 0px 0px hsl(47, 95%, 70%);
 		transition: 0.3s;
+	}
+
+	.term {
+		font-style: italic;
+	}
+	img.term {
+
+	}
+	b.term {
+		margin-right: 20px;
+		font-size: 3em;
+	}
+	p.term {
+		font-size: 2.5em;
 	}
 
 	.buttons {
@@ -46,7 +60,7 @@
 		border: none;
 		background: #fff;
 		outline: none;
-
+		font-family: 'Georgia Pro', serif;
 		margin-top: 25px;
 		padding: 10px;
 		font-size: 1.5em;
@@ -84,7 +98,8 @@
 
 /* header */
 header {
-	width: 100vw;		
+	margin-bottom: 20px;
+	width: 100%;		
 	text-align: center;
 	font-size: 1em;
 	background: hsl(0, 100%, 86%);
@@ -94,13 +109,13 @@ header {
 /* footer */
 	footer { 
 		height: 100px;
+		width: 100%;
 		clear: both;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		background: #fff;
-		width: 100vw;
 	}
 
 	ul.footer {

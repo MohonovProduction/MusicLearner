@@ -56,16 +56,16 @@ let app = new Vue ({
 				{term: 'glissando', transleate: 'скользя'},
 			],
 			dinamica: [
-				{term: 'f, forte', transleate: 'громко'},
-				{term: 'p, piano', transleate: 'тихо'},
-				{term: 'mf, mezzo forte', transleate: 'не очень громко'},
-				{term: 'mp, mezzo piano', transleate: 'не очень тихо'},
+				{term: 'forte', transleate: 'громко', symbol: 'f'},
+				{term: 'piano', transleate: 'тихо', symbol: 'p'},
+				{term: 'mezzo forte', transleate: 'не очень громко', symbol: 'mf'},
+				{term: 'mezzo piano', transleate: 'не очень тихо', symbol: 'mp'},
 				{term: 'crecsendo', transleate: 'усиливая'},
 				{term: 'diminuendo', transleate: 'стихая'},
 				{term: '>', transleate: 'акцент'},
-				{term: 'sf', transleate: 'внезапное ударение'},
-				{term: 'ff', transleate: 'очень громко'},
-				{term: 'pp', transleate: 'очень тихо'},
+				{term: '', transleate: 'внезапное ударение', symbol: 'sf'},
+				{term: '', transleate: 'очень громко', symbol: 'ff'},
+				{term: '', transleate: 'очень тихо', symbol: 'pp'},
 				{term: 'piu forte', transleate: 'более громко'},
 				{term: 'meno forte', transleate: 'менее громко'},
 				{term: 'poco', transleate: 'немного'},
@@ -101,6 +101,8 @@ let app = new Vue ({
 			]
 		},
 		term: 'Click to learn',
+		termSymbol: '',
+		termIllustration: '',
 		options: [
 			'',
 			'',
@@ -114,15 +116,8 @@ let app = new Vue ({
 	methods: {
 		genTerm: function () {
 			/*this.terms = this.terms.concat(this.termsBase.tempo, this.termsBase.tocco, this.termsBase.dinamica, this.termsBase.natura)*/
-			this.terms = [
-				{terms:'a', transleate: 'ay'},
-				{terms:'b', transleate: 'be'},
-				{terms:'c', transleate: function (id) {
-					let answer = document.querySelectorAll('.button')
-					console.log(answer)
-				}},
-				{terms:'d', transleate: 'de'}
-			]
+			this.terms = this.terms.concat(this.termsBase.dinamica)
+
 			this.show = true
 			this.styleSetUp = [0,0,0,0,0]
 
@@ -130,6 +125,8 @@ let app = new Vue ({
 			this.answerOptions = this.terms.slice(0, 4)
 			this.answer = this.answerOptions[random(this.answerOptions.length)]
 			this.term = this.answer.term
+			this.termSymbol = this.answer.symbol
+			this.termIllustration = this.answer.illustration
 
 			for (let i = this.answerOptions.length - 1; i >= 0; i--) {
 				Vue.set(this.options, i, this.answerOptions[i].transleate)

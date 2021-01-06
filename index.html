@@ -12,7 +12,7 @@
 		<main>
 			<section>
 				<div id="app" class="app">
-					<p 
+					<div
 						v-bind:class="{
 							card: true, 
 							correct: styleSetUp[4] == 1, 
@@ -20,8 +20,10 @@
 						}" 
 						v-on:click="genTerm"
 						>
-						{{term}}
-					</p>
+						<img v-bind:src="termIllustration" class="term">
+						<b class="term">{{termSymbol}}</b>
+						<p class="term">{{term}}</p>
+					</div>
 
 					<transition name="fade">
 						<div class="buttons" v-if="show">
