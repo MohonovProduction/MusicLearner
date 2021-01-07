@@ -9,6 +9,7 @@
 		<header>
 			<!--<p>Attention! Undermaintanance</p>!-->
 		</header>
+
 		<main>
 			<div id="app">
 				<section>
@@ -45,7 +46,7 @@
 				<aside v-bind:class="{menu: true, 'menu-active':  showMenu}">
 
 					<button class="close" v-on:click="showMenu = !showMenu">
-						<p class="close">✖</p>
+						<span class="close">✖</span>
 					</button>
 						<div class="menu">
 							<h2 class="menu">Whats terms to use for traning?</h2>
@@ -67,7 +68,6 @@
 			</div>
 		</main>
 
-		<!--
 		<footer>
 			<ul class="footer">
 				<li class="footer"><a href="https://t.me/mohonovschannel" target="blank">News</a></li>
@@ -79,7 +79,6 @@
 				<li class="footer"><a href="https://github.com/MohonovProduction" target="blank">Autor</a></li>
 			</ul>
 		</footer>
-		!-->
 
 		<script src="data.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
