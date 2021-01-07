@@ -47,7 +47,6 @@
 					<button class="close" v-on:click="showMenu = !showMenu">
 						<p class="close">✖</p>
 					</button>
-						<p class="atention">Attention! Undermaintanance</p>
 						<div class="menu">
 							<h2 class="menu">Whats terms to use for traning?</h2>
 							<select class="menu" v-model="settingTerms">
@@ -61,15 +60,7 @@
 
 							<h2 class="menu">Whats class of terms to use for traning?</h2>
 							<select class="menu" v-model="settingClass">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-								<option>6</option>
-								<option>7</option>
-								<option>8</option>
-								<option>9-11</option>
+								<option v-for="(terms, id) in termsBase" v-bind:value="id">{{termsBaseNames[id]}}</option>
 							</select>
 						</div>
 				</aside>
