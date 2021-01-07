@@ -50,8 +50,8 @@
 						<p class="atention">Attention! Undermaintanance</p>
 						<div class="menu">
 							<h2 class="menu">Whats terms to use for traning?</h2>
-							<select class="menu" >
-								<option selected>All</option>
+							<select class="menu" v-model="settingTerms">
+								<option selected="">All</option>
 								<option>Tempo</option>
 								<option>Tocco</option>
 								<option>Dinamica</option>
@@ -60,7 +60,7 @@
 							</select>
 
 							<h2 class="menu">Whats class of terms to use for traning?</h2>
-							<select class="menu">
+							<select class="menu" v-model="settingClass">
 								<option>1</option>
 								<option>2</option>
 								<option>3</option>
@@ -68,8 +68,8 @@
 								<option>5</option>
 								<option>6</option>
 								<option>7</option>
-								<option>8-9</option>
-								<option selected>10-11</option>
+								<option>8</option>
+								<option>9-11</option>
 							</select>
 						</div>
 				</aside>

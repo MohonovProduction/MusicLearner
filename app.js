@@ -13,8 +13,15 @@ function shuffle(array) {
 let app = new Vue ({
 	el: '#app',
 	data: {
+		/* styles */
 		show: false,
 		showMenu: false,
+
+		/* setings */
+		settingTerms: 'All',
+		settingClass: '9-11',
+
+		/* data */
 		terms: [],
 		termsBase: {
 			tempo: [

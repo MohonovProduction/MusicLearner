@@ -68,7 +68,7 @@
 	.button:hover {
 		cursor: pointer;
 		transform: translate(-5px, -5px);
-		box-shadow: 10px 10px 0px 0px hsl(47, 95%, 70%);
+		box-shadow: 15px 15px 0px 0px hsl(47, 95%, 70%);
 		transition: 0.3s;
 	}
 
