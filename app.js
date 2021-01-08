@@ -562,7 +562,6 @@ let app = new Vue ({
 			this.styleSetUp = [0,0,0,0,0]
 
 			this.terms = shuffle(this.terms)
-			console.log(this.terms)
 			this.answerOptions = this.terms.slice(0, 4)
 			this.answer = this.answerOptions[random(this.answerOptions.length)]
 			this.term = this.answer.term
