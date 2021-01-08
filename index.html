@@ -6,12 +6,16 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-		<!--<header class="attention">
-			<p>Attention! Undermaintanance</p>
-		</header>!-->
+		<header>
+
+		</header>
 
 		<main>
 			<div id="app">
+
+				<p class="attention" v-if="appIsNotWorking">Attention! Undermaintanance</p>
+				<p class="attention" v-if="attention">For First Class terms in nature is not found</p>
+
 				<section>
 					<div class="app">
 						<div
@@ -48,23 +52,23 @@
 					<button class="close" v-on:click="showMenu = !showMenu">
 						<span class="close">✖</span>
 					</button>
-						<div class="menu">
-							<h2 class="menu">Whats terms to use for traning?</h2>
-							<select class="menu" v-model="settingTerms">
-								<option selected="">All</option>
-								<option>Tempo</option>
-								<option>Tocco</option>
-								<option>Dinamica</option>
-								<option>Simbolo</option>
-								<option>Natura</option>
-							</select>
 
-							<h2 class="menu">Whats class of terms to use for traning?</h2>
-							<select class="menu" v-model="settingClass">
-								<option v-for="(terms, id) in termsBase" v-bind:value="id">{{termsBaseNames[id]}}</option>
-							</select>
-							<p class="attention" v-if="attention">For First Class terms in nature is not found</p>
-						</div>
+					<div class="menu">
+						<h2 class="menu">Whats terms to use for traning?</h2>
+						<select class="menu" v-model="settingTerms">
+							<option selected="">All</option>
+							<option>Tempo</option>
+							<option>Tocco</option>
+							<option>Dinamica</option>
+							<option>Simbolo</option>
+							<option>Natura</option>
+						</select>
+
+						<h2 class="menu">Whats class of terms to use for traning?</h2>
+						<select class="menu" v-model="settingClass">
+							<option v-for="(terms, id) in termsBase" v-bind:value="id">{{termsBaseNames[id]}}</option>
+						</select>
+					</div>
 				</aside>
 			</div>
 		</main>

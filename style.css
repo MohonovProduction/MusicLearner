@@ -78,13 +78,15 @@
 	}
 
 	.correct {
-		box-shadow: 5px 5px 0px 0px hsl(104, 66%, 67%);
+		box-shadow: 15px 15px 0px 0px hsl(104, 66%, 67%);
+		transform: translate(-5px, -5px);
 	}
 	.correct:hover {
 		box-shadow: 15px 15px 0px 0px hsl(104, 66%, 67%);
 	}
 	.incorrect {
-		box-shadow: 5px 5px 0px 0px hsl(347, 82%, 41%);
+		transform: translate(-5px, -5px);
+		box-shadow: 15px 15px 0px 0px hsl(347, 82%, 41%);
 	}
 	.incorrect:hover {
 		box-shadow: 15px 15px 0px 0px hsl(347, 82%, 41%);
