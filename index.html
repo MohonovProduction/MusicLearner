@@ -6,9 +6,9 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-		<header>
-			<!--<p>Attention! Undermaintanance</p>!-->
-		</header>
+		<!--<header class="attention">
+			<p>Attention! Undermaintanance</p>
+		</header>!-->
 
 		<main>
 			<div id="app">
@@ -63,6 +63,7 @@
 							<select class="menu" v-model="settingClass">
 								<option v-for="(terms, id) in termsBase" v-bind:value="id">{{termsBaseNames[id]}}</option>
 							</select>
+							<p class="attention" v-if="attention">For First Class terms in nature is not found</p>
 						</div>
 				</aside>
 			</div>

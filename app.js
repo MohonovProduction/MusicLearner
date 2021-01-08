@@ -16,6 +16,7 @@ let app = new Vue ({
 		/* styles */
 		show: false,
 		showMenu: false,
+		attention: false,
 
 		/* setings */
 		settingTerms: 'All',
@@ -547,6 +548,13 @@ let app = new Vue ({
 				} else {
 					this.terms = this.termsBase[this.settingClass].tempo.concat(this.termsBase[this.settingClass].dinamica,this.termsBase[this.settingClass].tocco,this.termsBase[this.settingClass].simbolo)
 				}
+			}
+
+			if (this.settingClass == '0' && this.settingTerms == 'Natura') {
+				this.attention = true
+				this.terms = this.terms = this.termsBase[this.settingClass].tempo.concat(this.termsBase[this.settingClass].dinamica,this.termsBase[this.settingClass].tocco,this.termsBase[this.settingClass].simbolo)
+			} else {
+				this.attention = false
 			}
 
 			this.show = true
