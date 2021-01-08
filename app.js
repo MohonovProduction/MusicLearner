@@ -549,7 +549,6 @@ let app = new Vue ({
 				}
 			}
 
-
 			this.show = true
 			this.styleSetUp = [0,0,0,0,0]
 
