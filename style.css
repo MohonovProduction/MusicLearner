@@ -207,12 +207,13 @@
 			aside.menu {
 				position: fixed;
 				left: 0px;
-				top: calc(-100vh + 40px);
+				top: calc(-100vh + 80px);
 				width: 100%;
-				height: calc(100vh - 40px);
+				height: calc(100vh - 80px);
 			}
 			.menu-active {
 				transform: translateY(100%);
+
 				transition: 0.3s;
 			}
 
