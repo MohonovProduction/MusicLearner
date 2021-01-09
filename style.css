@@ -207,9 +207,9 @@
 			aside.menu {
 				position: fixed;
 				left: 0px;
-				top: calc(-100vh + 80px);
+				top: calc(-60vh + 40px);
 				width: 100%;
-				height: calc(100vh - 80px);
+				height: calc(60vh - 40px);
 			}
 			.menu-active {
 				transform: translateY(100%);
