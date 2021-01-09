@@ -33,6 +33,11 @@
 			width: 100%;
 		}
 	}
+	@media all and (min-width: 1000px) {
+		.app {
+			width: 80%;
+		}
+	}
 
 	.card {
 		display: flex;
@@ -45,7 +50,6 @@
 		transition: 0.3s;
 		box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
 	}
-	
 	.card:hover {
 		cursor: pointer;
 		transform: translate(-5px, -5px);
