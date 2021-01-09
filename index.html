@@ -4,56 +4,64 @@
 		<title></title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
 		<header>
 
 		</header>
 
-		<main>
-			<div id="app">
+		<div id="app">
+			<main>
+				<div class="main">
 
-				<p class="attention" v-if="appIsNotWorking">Attention! Undermaintanance</p>
-				<p class="attention" v-if="attention">For First Class terms in nature is not found</p>
+					<p class="attention" v-if="appIsNotWorking">Attention! Undermaintanance</p>
+					<p class="attention" v-if="attention">For First Class terms in nature is not found</p>
 
-				<section>
-					<div class="app">
-						<div
-							v-bind:class="{
-								card: true, 
-								correct: styleSetUp[4] == 1, 
-								incorrect: styleSetUp[4] == 2
-							}" 
-							v-on:click="genTerm"
-							>
-							<img v-bind:src="termSymbol" class="term">
-							<p class="term">{{term}}</p>
-						</div>
-
-						<transition name="fade">
-							<div class="buttons" v-if="show">
-								<button 
-									v-bind:class="{
-										button: true, 
-										correct: styleSetUp[id] == 1, 
-										incorrect: styleSetUp[id] == 2
-									}" 
-									v-for="(option, id) of options"
-									v-on:click="checkAnswer(id)"
-									>
-									{{ options[id] }}
-								</button>
+					<section class="app-section">
+						<div class="app">
+							<div
+								v-bind:class="{
+									card: true, 
+									correct: styleSetUp[4] == 1, 
+									incorrect: styleSetUp[4] == 2
+								}" 
+								v-on:click="genTerm"
+								>
+								<img v-bind:src="termSymbol" class="term">
+								<p class="term">{{term}}</p>
 							</div>
-						</transition>
-				</section>
 
-				<aside v-bind:class="{menu: true, 'menu-active':  showMenu}">
+							<transition name="fade">
+								<div class="buttons" v-if="show">
+									<button 
+										v-bind:class="{
+											button: true, 
+											correct: styleSetUp[id] == 1, 
+											incorrect: styleSetUp[id] == 2
+										}" 
+										v-for="(option, id) of options"
+										v-on:click="checkAnswer(id)"
+										>
+										{{ options[id] }}
+									</button>
+								</div>
+							</transition>
+					</section>
+				</div>
+			</main>
 
-					<button class="close" v-on:click="showMenu = !showMenu">
-						<span class="close">✖</span>
-					</button>
+			<aside v-bind:class="{menu: true, 'menu-active':  showMenu}">
 
-					<div class="menu">
+				<button class="close" v-on:click="showMenu = !showMenu">
+					<span class="close">
+						<span v-if="showMenu">✖</span>
+						<span v-if="!showMenu">setting</span>
+					</span>
+				</button>
+
+				<div class="menu">
+					<div class="menu-setting-block">
 						<h2 class="menu">Whats terms to use for traning?</h2>
 						<select class="menu" v-model="settingTerms">
 							<option selected="">All</option>
@@ -63,15 +71,18 @@
 							<option>Simbolo</option>
 							<option>Natura</option>
 						</select>
+					</div>
 
+					<div class="menu-setting-block">
 						<h2 class="menu">Whats class of terms to use for traning?</h2>
 						<select class="menu" v-model="settingClass">
 							<option v-for="(terms, id) in termsBase" v-bind:value="id">{{termsBaseNames[id]}}</option>
 						</select>
 					</div>
-				</aside>
-			</div>
-		</main>
+
+				</div>
+			</aside>
+		</div>
 
 		<footer>
 			<ul class="footer">

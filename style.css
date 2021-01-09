@@ -1,22 +1,37 @@
 /* main */
 	body {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		align-items: center;
 		margin: 0px;
 		background: hsl(47, 95%, 95%);
 		font-family: 'Georgia Pro', serif;
 	}
-	main {
+	main, .main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: calc(100% - 40px);
 		height: auto;
 		min-height: 100vh;
 	}
 
 /* app */
+	.app-section {
+		width: 40%;
+	}
 	.app {
 		margin: 40px 0px;
-		width: 500px;
+	}
+
+	@media screen and (max-width: 479px) {
+		.app-section {
+			width: 80%;
+		}
+		.app {
+			margin: 80px 0px;
+		}
+
+		main, .main {
+			width: 100%;
+		}
 	}
 
 	.card {
@@ -26,7 +41,6 @@
 		align-items: center;
 		width: 100%;
 		height: 300px;	
-		padding: 10px;
 		background: #fff;
 		transition: 0.3s;
 		box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
@@ -103,37 +117,52 @@
 	aside.menu {
 		z-index: 2;
 		position: fixed;
-		right: -500px;
+		left: 100%;
 		top: 0px;
+
+		width: 40%;
 		height: 100vh;
 		transition: 0.3s;
 	}
 	.menu-active {
-		transform: translate(-540px);
+		transform: translate(-100%);
 		transition: 0.3s;
 	}
 
 	div.menu {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
 		background: hsl(30, 100%, 40%);
-		padding: 20px;
 		width: 100%;
 		height: 100%;
 	}
+
+	.menu-setting-block {
+		width: 90%;
+		padding: 30px 10px 10px 10px;
+		margin: 0px 20px 20px 30px;
+	}
+
 	h2.menu {
-		margin: 10px 0px 15px 0px;
 		font-family: sans-serif;
 		color: #fff;
+		margin: 0px 0px 10px 0px;
 	}
 
 	select.menu {
 		user-select: none;
 		outline: none;
 		border: none;
-		padding: 5px;
-		margin: 0px 0px 30px 0px;
+		padding: 10px;
 		width: 100%;
 		color: #fff;
+		font-size: 1em;
 		background: hsl(30, 100%, 60%);
+	}
+	select.menu:hover {
+		cursor: pointer;
 	}
 
 	button.close {
@@ -143,9 +172,9 @@
 		border: none;
 
 		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: center;
+		flex-direction: row;
+		justify-content: center;
+		align-items: flex-start;
 
 		position: absolute;
 		left: -50px;
@@ -163,8 +192,47 @@
 	}
 
 	span.close {
-		margin-top: 10px;
+		margin-top: 20px;
+		font-family: sans-serif;
+		font-size: 1.05em;
+		transform: rotate(90deg);
 	}
+
+	/* mobile */
+		@media screen and (max-width: 479px) {
+			aside.menu {
+				position: fixed;
+				left: 0px;
+				top: calc(-100vh + 40px);
+				width: 100%;
+				height: calc(100vh - 40px);
+			}
+			.menu-active {
+				transform: translateY(100%);
+				transition: 0.3s;
+			}
+
+			button.close {
+				position: absolute;
+				top: 100%;
+				left: 0px;
+
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+
+				width: 100vw;
+				height: 40px;
+
+				opacity: 1;
+			}	
+
+			span.close {
+				margin: 0px;
+				transform: rotate(0deg);
+			}
+		}
 
 /* header */
 	header {
@@ -172,7 +240,7 @@
 	}
 
 	.attention {
-		width: 100%;		
+		width: 90%;		
 		height: auto;
 		margin-bottom: 20px;
 		padding: 20px;
@@ -203,6 +271,7 @@
 		display: flex;
 		flex-direction: row;
 		margin: 0px;
+		padding: 0px;
 		list-style: none;
 	}
 	li.footer {
