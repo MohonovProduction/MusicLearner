@@ -141,8 +141,8 @@
 				transition: 0.3s;
 			}
 			.card:active {
-				transform: translate(-5px, -5px);
-				box-shadow: 15px 15px 0px 0px hsl(47, 95%, 70%);
+				transform: translate(5px, 5px);
+				box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
 				transition: 0.3s;
 			}
 
@@ -153,8 +153,8 @@
 			}
 			.button:active {
 				transform: translate(-5px, -5px);
-			box-shadow: 15px 15px 0px 0px hsl(47, 95%, 70%);
-			transition: 0.3s;
+				box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
+				transition: 0.3s;
 			}
 
 			.correct:hover {
@@ -162,16 +162,16 @@
 				transform: translate(0px, 0px);
 			}
 			.correct:active {
-				box-shadow: 15px 15px 0px 0px hsl(104, 66%, 67%);
-				transform: translate(-5px, -5px);
+				box-shadow: 5px 5px 0px 0px hsl(104, 66%, 67%);
+				transform: translate(5px, 5px);
 			}
 			.incorrect:hover {
 				box-shadow: 5px 5px 0px 0px hsl(347, 82%, 41%);
 				transform: translate(0px, 0px);
 			}
 			.incorrect:active {
-				box-shadow: 15px 15px 0px 0px hsl(347, 82%, 41%);
-				transform: translate(-5px, -5px);
+				box-shadow: 5px 5px 0px 0px hsl(347, 82%, 41%);
+				transform: translate(5px, 5px);
 			}
 		}
 
@@ -329,6 +329,7 @@
 			margin-bottom: 0px;
 		}
 	}
+
 /* footer */
 	footer { 
 		z-index: 1;
