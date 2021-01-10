@@ -15,7 +15,7 @@
 
 /* app */
 	.app-section {
-		width: 40%;
+		width: 350px;
 	}
 	.app {
 		margin: 40px 0px;
@@ -35,7 +35,7 @@
 	}
 	@media all and (min-width: 1000px) {
 		.app {
-			width: 80%;
+			width: 400px;
 		}
 	}
 
@@ -52,8 +52,14 @@
 	}
 	.card:hover {
 		cursor: pointer;
+
 		transform: translate(-5px, -5px);
 		box-shadow: 15px 15px 0px 0px hsl(47, 95%, 70%);
+		transition: 0.3s;
+	}
+	.card:active {
+		transform: translate(0px, 0px);
+		box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
 		transition: 0.3s;
 	}
 
@@ -90,25 +96,84 @@
 	}
 	.button:hover {
 		cursor: pointer;
+
 		transform: translate(-5px, -5px);
-		box-shadow: 10px 10px 0px 0px hsl(47, 95%, 70%);
+		box-shadow: 15px 15px 0px 0px hsl(47, 95%, 70%);
+		transition: 0.3s;
+	}
+	.button:active {
+		transform: translate(0px, 0px);
+		box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
 		transition: 0.3s;
 	}
 
 	.correct {
-		box-shadow: 15px 15px 0px 0px hsl(104, 66%, 67%);
-		transform: translate(-5px, -5px);
+		box-shadow: 5px 5px 0px 0px hsl(104, 66%, 67%);
+		transform: translate(0px, 0px);
 	}
 	.correct:hover {
 		box-shadow: 15px 15px 0px 0px hsl(104, 66%, 67%);
-	}
-	.incorrect {
 		transform: translate(-5px, -5px);
-		box-shadow: 15px 15px 0px 0px hsl(347, 82%, 41%);
+	}
+	.correct:active {
+		box-shadow: 5px 5px 0px 0px hsl(104, 66%, 67%);
+		transform: translate(0px, 0px);
+	}
+
+	.incorrect {
+		box-shadow: 5px 5px 0px 0px hsl(347, 82%, 41%);
+		transform: translate(0px, 0px);
 	}
 	.incorrect:hover {
 		box-shadow: 15px 15px 0px 0px hsl(347, 82%, 41%);
+		transform: translate(-5px, -5px);
 	}
+	.incorrect:active {
+		box-shadow: 5px 5px 0px 0px hsl(347, 82%, 41%);
+		transform: translate(0px, 0px);
+	}
+
+	/* mobile animation*/
+		@media screen and (max-width: 479px) {
+			.card:hover {
+				transform: translate(0px, 0px);
+				box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
+				transition: 0.3s;
+			}
+			.card:active {
+				transform: translate(-5px, -5px);
+				box-shadow: 15px 15px 0px 0px hsl(47, 95%, 70%);
+				transition: 0.3s;
+			}
+
+			.button:hover {
+				transform: translate(0px, 0px);
+				box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
+				transition: 0.3s;
+			}
+			.button:active {
+				transform: translate(-5px, -5px);
+			box-shadow: 15px 15px 0px 0px hsl(47, 95%, 70%);
+			transition: 0.3s;
+			}
+
+			.correct:hover {
+				box-shadow: 5px 5px 0px 0px hsl(104, 66%, 67%);
+				transform: translate(0px, 0px);
+			}
+			.correct:active {
+				box-shadow: 15px 15px 0px 0px hsl(104, 66%, 67%);
+				transform: translate(-5px, -5px);
+			}
+			.incorrect:hover {
+				box-shadow: 5px 5px 0px 0px hsl(347, 82%, 41%);
+				transform: translate(0px, 0px);
+			}
+			.incorrect:active {
+				box-shadow: 15px 15px 0px 0px hsl(347, 82%, 41%);
+				transform: translate(-5px, -5px);
+			}
+		}
 
 /* animation */
 	.fade-enter-active {
@@ -257,7 +322,13 @@
 		background: hsl(0, 100%, 86%);
 		color: hsl(0, 100%, 25%);
 	}
-
+	@media screen and (max-width: 479px) {
+		.attention {
+			width: 80%;	
+			margin-top: 60px;
+			margin-bottom: 0px;
+		}
+	}
 /* footer */
 	footer { 
 		z-index: 1;
