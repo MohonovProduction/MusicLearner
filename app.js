@@ -18,6 +18,7 @@ let app = new Vue ({
 		showMenu: false,
 		attention: false,
 		appIsNotWorking: false,
+		ru: '',
 
 		/* setings */
 		settingTerms: 'All',

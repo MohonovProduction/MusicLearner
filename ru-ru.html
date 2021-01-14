@@ -38,8 +38,8 @@
 			<main>
 				<div class="main">
 
-					<p class="attention" v-if="appIsNotWorking">Attention! Undermaintanance</p>
-					<p class="attention" v-if="attention">For First Class terms in nature is not found. Please change your settings</p>
+					<p class="attention" v-if="appIsNotWorking">Внимание! Технические работы</p>
+					<p class="attention" v-if="attention">Для первого класса термины в &laquo;Характере исполнения&raquo; не найдены. Пожалуйста измените настройки</p>
 
 					<section class="app-section">
 						<div class="app">
@@ -79,25 +79,25 @@
 				<button class="close" v-on:click="showMenu = !showMenu">
 					<span class="close">
 						<span v-if="showMenu">✖</span>
-						<span v-if="!showMenu">setting</span>
+						<span v-if="!showMenu">Коллекция</span>
 					</span>
 				</button>
 
 				<div class="menu">
 					<div class="menu-setting-block">
-						<h2 class="menu">Whats terms to use for traning?</h2>
+						<h2 class="menu">Какой тип терминов использовать в коллекции?</h2>
 						<select class="menu" v-model="settingTerms">
-							<option selected="">All</option>
-							<option>Tempo</option>
-							<option>Tocco</option>
-							<option>Dinamica</option>
-							<option>Simbolo</option>
-							<option>Natura</option>
+							<option value="All">Все</option>
+							<option value="Tempo">Темп</option>
+							<option value="Tocco">Ритм</option>
+							<option value="Dinamica">Динамика</option>
+							<option value="Simbolo">Условные обозначения</option>
+							<option value="Natura">Характер исполнения</option>
 						</select>
 					</div>
 
 					<div class="menu-setting-block">
-						<h2 class="menu">Whats class of terms to use for traning?</h2>
+						<h2 class="menu">Термины для какого класса использовать в коллекции?</h2>
 						<select class="menu" v-model="settingClass">
 							<option v-for="(terms, id) in termsBase" v-bind:value="id">{{termsBaseNames[id]}}</option>
 						</select>
@@ -109,12 +109,11 @@
 
 		<footer>
 			<ul class="footer">
-				<li class="footer footer-language"><a href="ru-ru.html">Russian</a></li>
-				<li class="footer" title="News and about project">
-					<a href="https://t.me/mohonovschannel" target="blank">News</a>
+				<li class="footer" title="Новости и о проекте">
+					<a href="https://t.me/mohonovschannel" target="blank">Новости</a>
 				</li>
-				<li class="footer" title="Autor">
-					<a href="https://github.com/MohonovProduction" target="blank">Autor</a>
+				<li class="footer" title="Автор">
+					<a href="https://github.com/MohonovProduction" target="blank">Автор</a>
 				</li>
 				<li class="footer" title="App for everyone, everywhere">
 					<a href="https://github.com/MohonovProduction/MusicLearner/releases/tag/1.1" target="blank">version 1.1</a>
