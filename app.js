@@ -18,7 +18,7 @@ let app = new Vue ({
 		showMenu: false,
 		attention: false,
 		appIsNotWorking: false,
-		ru: '',
+		hello: true,
 
 		/* setings */
 		settingTerms: 5,
@@ -519,7 +519,7 @@ let app = new Vue ({
 				]		
 			]
 		],
-		term: 'Click to learn',
+		term: '',
 		termSymbol: '',
 		options: [
 			'',
@@ -549,6 +549,7 @@ let app = new Vue ({
 				this.attention = false
 			}
 
+			this.hello = false
 			this.show = true
 			this.styleSetUp = [0,0,0,0,0]
 
