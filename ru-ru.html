@@ -79,7 +79,7 @@
 				<button class="close" v-on:click="showMenu = !showMenu">
 					<span class="close">
 						<span v-if="showMenu">✖</span>
-						<span v-if="!showMenu">Коллекция</span>
+						<span v-if="!showMenu">коллекция</span>
 					</span>
 				</button>
 
@@ -87,19 +87,19 @@
 					<div class="menu-setting-block">
 						<h2 class="menu">Какой тип терминов использовать в коллекции?</h2>
 						<select class="menu" v-model="settingTerms">
-							<option value="All">Все</option>
-							<option value="Tempo">Темп</option>
-							<option value="Tocco">Ритм</option>
-							<option value="Dinamica">Динамика</option>
-							<option value="Simbolo">Условные обозначения</option>
-							<option value="Natura">Характер исполнения</option>
+							<option value="5">Все</option>
+							<option value="0">Темп</option>
+							<option value="1">Ритм</option>
+							<option value="2">Динамика</option>
+							<option value="3">Условные обозначения</option>
+							<option value="4">Характер исполнения</option>
 						</select>
 					</div>
 
 					<div class="menu-setting-block">
 						<h2 class="menu">Термины для какого класса использовать в коллекции?</h2>
 						<select class="menu" v-model="settingClass">
-							<option v-for="(terms, id) in termsBase" v-bind:value="id">{{termsBaseNames[id]}}</option>
+							<option v-for="(terms, id) in termsBase" v-bind:value="id">{{termsBaseClass[id]}}</option>
 						</select>
 					</div>
 
@@ -109,6 +109,7 @@
 
 		<footer>
 			<ul class="footer">
+				<li class="footer footer-language"><a href="index.html">English</a></li>
 				<li class="footer" title="Новости и о проекте">
 					<a href="https://t.me/mohonovschannel" target="blank">Новости</a>
 				</li>
@@ -116,7 +117,7 @@
 					<a href="https://github.com/MohonovProduction" target="blank">Автор</a>
 				</li>
 				<li class="footer" title="App for everyone, everywhere">
-					<a href="https://github.com/MohonovProduction/MusicLearner/releases/tag/1.1" target="blank">version 1.1</a>
+					<a href="https://github.com/MohonovProduction/MusicLearner/releases/tag/1.1" target="blank">версия 1.1</a>
 				</li>
 				<li class="footer" title="code = <3 = Saint-Petersburg">
 					<a href="https://github.com/MohonovProduction/musicLeaner" target="blank">
