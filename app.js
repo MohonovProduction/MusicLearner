@@ -21,41 +21,42 @@ let app = new Vue ({
 		ru: '',
 
 		/* setings */
-		settingTerms: 'All',
+		settingTerms: 5,
 		settingClass: 7,
-		termsBaseNames: ['1','2','3','4','5','7','8','9-11'],
+		termsBaseClass: ['1','2','3','4','5','7','8','9-11'],
 
 		/* data */
 		terms: [],
 		termsBase: [
-			{
-				tempo: [
+			[
+				[
 					{term: 'allegro', transleate: 'скоро'},
 					{term: 'adagio', transleate: 'медленно'},
 					{term: 'andante', transleate: 'спокойным шагом'},
 					{term: 'ritenuto', transleate: 'сдерживая'},
 					{term: 'a tempo', transleate: 'в темпе'},
 				],
-				tocco: [
+				[
 					{term: 'detache', transleate: 'раздельно', symbol: 'img/tocco/Music-detache.svg'},
 					{term: 'legato', transleate: 'связно', symbol: 'img/tocco/Music-legato.svg'},
 					{term: 'staccato', transleate: 'отрывисто', symbol: 'img/tocco/Music-staccato.svg'},
 				],
-				dinamica:  [
+				[
 					{term: 'forte', transleate: 'громко', symbol: 'img/dinamica/Music-forte.svg'},
 					{term: 'piano', transleate: 'тихо', symbol: 'img/dinamica/Music-piano.svg'},
 					{term: 'crecsendo', transleate: 'усиливая', symbol: 'img/dinamica/Music-crescendo.svg'},
 					{term: 'diminuendo', transleate: 'стихая', symbol: 'img/dinamica/Music-diminuendo.svg'},
 				],
-				simbolo: [
+				[
 					{term: 'реприза', transleate: 'повторение', symbol: 'img/simbolo/Music-repeat.png'},
 					{term: '', transleate: 'за первым разом на первую вольту, за вторым на вторую', symbol: 'img/simbolo/Music-volte.svg'},
 					{term: 'fermata', transleate: 'остановка', symbol: 'img/simbolo/Music-fermata.svg'},
 					{term: 'Fine', transleate: 'финал, конец'},
 				],
-			},
-			{
-				tempo: [
+				[],
+			],
+			[
+				[
 					{term: 'allegro', transleate: 'скоро'},
 					{term: 'adagio', transleate: 'медленно'},
 					{term: 'andante', transleate: 'спокойным шагом'},
@@ -63,33 +64,33 @@ let app = new Vue ({
 					{term: 'a tempo', transleate: 'в темпе'},
 					{term: 'vivo', transleate: 'живо'},
 				],
-				tocco: [
+				[
 					{term: 'detache', transleate: 'раздельно', symbol: 'img/tocco/Music-detache.svg'},
 					{term: 'legato', transleate: 'связно', symbol: 'img/tocco/Music-legato.svg'},
 					{term: 'staccato', transleate: 'отрывисто', symbol: 'img/tocco/Music-staccato.svg'},
 				],
-				dinamica: [
+				[
 					{term: 'forte', transleate: 'громко', symbol: 'img/dinamica/Music-forte.svg'},
 					{term: 'piano', transleate: 'тихо', symbol: 'img/dinamica/Music-piano.svg'},
 					{term: 'crecsendo', transleate: 'усиливая', symbol: 'img/dinamica/Music-crescendo.svg'},
 					{term: 'diminuendo', transleate: 'стихая', symbol: 'img/dinamica/Music-diminuendo.svg'},
 					{term: 'marcato', transleate: 'акцент', symbol: 'img/dinamica/Music-marcato.svg'},
 				],
-				simbolo: [
+				[
 					{term: 'реприза', transleate: 'повторение', symbol: 'img/simbolo/Music-repeat.png'},
 					{term: '', transleate: 'за первым разом на первую вольту, за вторым на вторую', symbol: 'img/simbolo/Music-volte.svg'},
 					{term: 'fermata', transleate: 'остановка', symbol: 'img/simbolo/Music-fermata.svg'},
 					{term: 'Fine', transleate: 'финал, конец'},
 					{term: '', transleate: 'повторение предыдущего такта', symbol: 'img/simbolo/Music-simile.png'},
 				],
-				natura: [
+				[
 					{term: 'dolche', transleate: 'нежно'},
 					{term: 'cantabile', transleate: 'певуче'},
 					{term: 'risoluto', transleate: 'решительно'},
 				],
-			},
-			{
-				tempo: [
+			],
+			[
+				[
 					{term: 'allegro', transleate: 'скоро'},
 					{term: 'adagio', transleate: 'медленно'},
 					{term: 'andante', transleate: 'спокойным шагом'},
@@ -102,13 +103,13 @@ let app = new Vue ({
 					{term: 'andantino', transleate: 'подвижнее, чем andante'},
 					{term: 'lento', transleate: 'медленно'},
 				],
-				tocco: [
+				[
 					{term: 'detache', transleate: 'раздельно', symbol: 'img/tocco/Music-detache.svg'},
 					{term: 'legato', transleate: 'связно', symbol: 'img/tocco/Music-legato.svg'},
 					{term: 'staccato', transleate: 'отрывисто', symbol: 'img/tocco/Music-staccato.svg'},
 					{term: 'marcato', transleate: 'подчёркивая', symbol: 'img/tocco/Music-marcato.svg'},
 				],
-				dinamica: [
+				[
 					{term: 'forte', transleate: 'громко', symbol: 'img/dinamica/Music-forte.svg'},
 					{term: 'piano', transleate: 'тихо', symbol: 'img/dinamica/Music-piano.svg'},
 					{term: 'mezzo forte', transleate: 'не очень громко', symbol: 'img/dinamica/Music-mezzoforte.svg'},
@@ -119,7 +120,7 @@ let app = new Vue ({
 					{term: 'sforzando', transleate: 'внезапное ударение', symbol: 'img/dinamica/Sfz.svg'},
 
 				],
-				simbolo: [
+				[
 					{term: 'реприза', transleate: 'повторение', symbol: 'img/simbolo/Music-repeat.png'},
 					{term: '', transleate: 'за первым разом на первую вольту, за вторым на вторую', symbol: 'img/simbolo/Music-volte.svg'},
 					{term: 'fermata', transleate: 'остановка', symbol: 'img/simbolo/Music-fermata.svg'},
@@ -128,15 +129,15 @@ let app = new Vue ({
 					{term: 'Da capo al fine', transleate: 'с начала до слова «Конец»'},
 
 				],
-				natura: [
+				[
 					{term: 'dolche', transleate: 'нежно'},
 					{term: 'cantabile', transleate: 'певуче'},
 					{term: 'risoluto', transleate: 'решительно'},
 					{term: 'leggiero', transleate: 'легко'},
 				],
-			},
-			{
-				tempo: [
+			],
+			[
+				[
 					{term: 'allegro', transleate: 'скоро'},
 					{term: 'adagio', transleate: 'медленно'},
 					{term: 'andante', transleate: 'спокойным шагом'},
@@ -152,13 +153,13 @@ let app = new Vue ({
 					{term: 'piu mosso', transleate: 'более подвижно'},
 					{term: 'meno mosso', transleate: 'менее подвижно'},
 				],
-				tocco: [
+				[
 					{term: 'detache', transleate: 'раздельно', symbol: 'img/tocco/Music-detache.svg'},
 					{term: 'legato', transleate: 'связно', symbol: 'img/tocco/Music-legato.svg'},
 					{term: 'staccato', transleate: 'отрывисто', symbol: 'img/tocco/Music-staccato.svg'},
 					{term: 'marcato', transleate: 'подчёркивая', symbol: 'img/tocco/Music-marcato.svg'},
 				],
-				dinamica: [
+				[
 					{term: 'forte', transleate: 'громко', symbol: 'img/dinamica/Music-forte.svg'},
 					{term: 'piano', transleate: 'тихо', symbol: 'img/dinamica/Music-piano.svg'},
 					{term: 'mezzo forte', transleate: 'не очень громко', symbol: 'img/dinamica/Music-mezzoforte.svg'},
@@ -170,7 +171,7 @@ let app = new Vue ({
 					{term: 'fortissimo', transleate: 'очень громко', symbol: 'img/dinamica/Music-fortissimo.svg'},
 					{term: 'pianissimo', transleate: 'очень тихо', symbol: 'img/dinamica/Music-pianissimo.svg'},
 				],
-				simbolo: [
+				[
 					{term: 'реприза', transleate: 'повторение', symbol: 'img/simbolo/Music-repeat.png'},
 					{term: '', transleate: 'за первым разом на первую вольту, за вторым на вторую', symbol: 'img/simbolo/Music-volte.svg'},
 					{term: 'fermata', transleate: 'остановка', symbol: 'img/simbolo/Music-fermata.svg'},
@@ -180,7 +181,7 @@ let app = new Vue ({
 					{term: 'Segno', transleate: 'сеньо - знак', symbol: 'img/simbolo/Music-segno.png'},
 					{term: 'Lanterna', transleate: 'фонарь - знак', symbol: 'img/simbolo/Coda_sign.svg'}
 				],
-				natura: [
+				[
 					{term: 'dolche', transleate: 'нежно'},
 					{term: 'cantabile', transleate: 'певуче'},
 					{term: 'risoluto', transleate: 'решительно'},
@@ -189,9 +190,9 @@ let app = new Vue ({
 					{term: 'giocoso', transleate: 'весело'},
 					{term: 'maestoso', transleate: 'торжественно, величаво'},
 				],
-			},
-			{
-				tempo: [
+			],
+			[
+				[
 					{term: 'allegro', transleate: 'скоро'},
 					{term: 'adagio', transleate: 'медленно'},
 					{term: 'andante', transleate: 'спокойным шагом'},
@@ -212,14 +213,14 @@ let app = new Vue ({
 					{term: 'rubato', transleate: 'в свободном темпе'},
 					{term: 'presto', transleate: 'быстро'},
 				],
-				tocco: [
+				[
 					{term: 'detache', transleate: 'раздельно', symbol: 'img/tocco/Music-detache.svg'},
 					{term: 'legato', transleate: 'связно', symbol: 'img/tocco/Music-legato.svg'},
 					{term: 'staccato', transleate: 'отрывисто', symbol: 'img/tocco/Music-staccato.svg'},
 					{term: 'marcato', transleate: 'подчёркивая', symbol: 'img/tocco/Music-marcato.svg'},
 					{term: 'non legato', transleate: 'не связно', symbol: 'img/tocco/Music-non-legato.svg'},
 				],
-				dinamica: [
+				[
 					{term: 'forte', transleate: 'громко', symbol: 'img/dinamica/Music-forte.svg'},
 					{term: 'piano', transleate: 'тихо', symbol: 'img/dinamica/Music-piano.svg'},
 					{term: 'mezzo forte', transleate: 'не очень громко', symbol: 'img/dinamica/Music-mezzoforte.svg'},
@@ -233,7 +234,7 @@ let app = new Vue ({
 					{term: 'piu forte', transleate: 'более громко'},
 					{term: 'meno forte', transleate: 'менее громко'},
 				],
-				simbolo: [
+				[
 					{term: 'реприза', transleate: 'повторение', symbol: 'img/simbolo/Music-repeat.png'},
 					{term: '', transleate: 'за первым разом на первую вольту, за вторым на вторую', symbol: 'img/simbolo/Music-volte.svg'},
 					{term: 'fermata', transleate: 'остановка', symbol: 'img/simbolo/Music-fermata.svg'},
@@ -243,7 +244,7 @@ let app = new Vue ({
 					{term: 'Segno', transleate: 'сеньо - знак', symbol: 'img/simbolo/Music-segno.png'},
 					{term: 'Lanterna', transleate: 'фонарь - знак', symbol: 'img/simbolo/Coda_sign.svg'}
 				],
-				natura: [
+				[
 					{term: 'dolche', transleate: 'нежно'},
 					{term: 'cantabile', transleate: 'певуче'},
 					{term: 'risoluto', transleate: 'решительно'},
@@ -253,9 +254,9 @@ let app = new Vue ({
 					{term: 'maestoso', transleate: 'торжественно, величаво'},
 					{term: 'simile', transleate: 'точно так, как раньше'},
 				],
-			},
-			{
-				tempo: [
+			],
+			[
+				[
 					{term: 'allegro', transleate: 'скоро'},
 					{term: 'adagio', transleate: 'медленно'},
 					{term: 'andante', transleate: 'спокойным шагом'},
@@ -282,7 +283,7 @@ let app = new Vue ({
 					{term: 'rallentando', transleate: 'замедляя'},
 
 				],
-				tocco: [
+				[
 					{term: 'detache', transleate: 'раздельно', symbol: 'img/tocco/Music-detache.svg'},
 					{term: 'legato', transleate: 'связно', symbol: 'img/tocco/Music-legato.svg'},
 					{term: 'staccato', transleate: 'отрывисто', symbol: 'img/tocco/Music-staccato.svg'},
@@ -290,7 +291,7 @@ let app = new Vue ({
 					{term: 'non legato', transleate: 'не связно', symbol: 'img/tocco/Music-non-legato.svg'},
 					{term: 'portamento', transleate: 'протяжно но не связно', symbol: 'img/tocco/Music-portamento.svg'},
 				],
-				dinamica: [
+				[
 					{term: 'forte', transleate: 'громко', symbol: 'img/dinamica/Music-forte.svg'},
 					{term: 'piano', transleate: 'тихо', symbol: 'img/dinamica/Music-piano.svg'},
 					{term: 'mezzo forte', transleate: 'не очень громко', symbol: 'img/dinamica/Music-mezzoforte.svg'},
@@ -307,7 +308,7 @@ let app = new Vue ({
 					{term: 'poco a poco crecsendo', transleate: 'мало-помалу усиливая'},
 					{term: 'poco a poco diminuendo', transleate: 'мало-помалу стихая'},
 				],
-				simbolo: [
+				[
 					{term: 'реприза', transleate: 'повторение', symbol: 'img/simbolo/Music-repeat.png'},
 					{term: '', transleate: 'за первым разом на первую вольту, за вторым на вторую', symbol: 'img/simbolo/Music-volte.svg'},
 					{term: 'fermata', transleate: 'остановка', symbol: 'img/simbolo/Music-fermata.svg'},
@@ -317,7 +318,7 @@ let app = new Vue ({
 					{term: 'Segno', transleate: 'сеньо - знак', symbol: 'img/simbolo/Music-segno.png'},
 					{term: 'Lanterna', transleate: 'фонарь - знак', symbol: 'img/simbolo/Coda_sign.svg'}
 				],
-				natura: [
+				[
 					{term: 'dolche', transleate: 'нежно'},
 					{term: 'cantabile', transleate: 'певуче'},
 					{term: 'risoluto', transleate: 'решительно'},
@@ -335,9 +336,9 @@ let app = new Vue ({
 					{term: 'appasionato', transleate: 'страстно'},
 					{term: 'grazioso', transleate: 'грациозно'},
 				],
-			},
-			{
-				tempo: [
+			],
+			[
+				[
 					{term: 'allegro', transleate: 'скоро'},
 					{term: 'adagio', transleate: 'медленно'},
 					{term: 'andante', transleate: 'спокойным шагом'},
@@ -366,7 +367,7 @@ let app = new Vue ({
 					{term: 'assai', transleate: 'весьма, очень'},
 					{term: 'stringendo', transleate: 'ускоряя'},
 				],
-				tocco: [
+				[
 					{term: 'detache', transleate: 'раздельно', symbol: 'img/tocco/Music-detache.svg'},
 					{term: 'legato', transleate: 'связно', symbol: 'img/tocco/Music-legato.svg'},
 					{term: 'staccato', transleate: 'отрывисто', symbol: 'img/tocco/Music-staccato.svg'},
@@ -375,7 +376,7 @@ let app = new Vue ({
 					{term: 'portamento', transleate: 'протяжно но не связно', symbol: 'img/tocco/Music-portamento.svg'},
 					{term: 'tenuto', transleate: 'выдержанно', symbol: 'img/tocco/Music-tenuto.svg'},
 				],
-				dinamica: [
+				[
 					{term: 'forte', transleate: 'громко', symbol: 'img/dinamica/Music-forte.svg'},
 					{term: 'piano', transleate: 'тихо', symbol: 'img/dinamica/Music-piano.svg'},
 					{term: 'mezzo forte', transleate: 'не очень громко', symbol: 'img/dinamica/Music-mezzoforte.svg'},
@@ -392,7 +393,7 @@ let app = new Vue ({
 					{term: 'poco a poco crecsendo', transleate: 'мало-помалу усиливая'},
 					{term: 'poco a poco diminuendo', transleate: 'мало-помалу стихая'},
 				],
-				simbolo: [
+				[
 					{term: 'реприза', transleate: 'повторение', symbol: 'img/simbolo/Music-repeat.png'},
 					{term: '', transleate: 'за первым разом на первую вольту, за вторым на вторую', symbol: 'img/simbolo/Music-volte.svg'},
 					{term: 'fermata', transleate: 'остановка', symbol: 'img/simbolo/Music-fermata.svg'},
@@ -402,7 +403,7 @@ let app = new Vue ({
 					{term: 'Segno', transleate: 'сеньо - знак', symbol: 'img/simbolo/Music-segno.png'},
 					{term: 'Lanterna', transleate: 'фонарь - знак', symbol: 'img/simbolo/Coda_sign.svg'}
 				],
-				natura: [
+				[
 					{term: 'dolche', transleate: 'нежно'},
 					{term: 'cantabile', transleate: 'певуче'},
 					{term: 'risoluto', transleate: 'решительно'},
@@ -424,9 +425,9 @@ let app = new Vue ({
 					{term: 'pesante', transleate: 'тяжело'},
 					{term: 'subito', transleate: 'внезапно'},
 				]
-			},
-			{
-				tempo: [
+			],
+			[
+				[
 					{term: 'allegro', transleate: 'скоро'},
 					{term: 'adagio', transleate: 'медленно'},
 					{term: 'andante', transleate: 'спокойным шагом'},
@@ -455,7 +456,7 @@ let app = new Vue ({
 					{term: 'assai', transleate: 'весьма, очень'},
 					{term: 'stringendo', transleate: 'ускоряя'},
 				],
-				tocco: [
+				[
 					{term: 'detache', transleate: 'раздельно', symbol: 'img/tocco/Music-detache.svg'},
 					{term: 'legato', transleate: 'связно', symbol: 'img/tocco/Music-legato.svg'},
 					{term: 'staccato', transleate: 'отрывисто', symbol: 'img/tocco/Music-staccato.svg'},
@@ -465,7 +466,7 @@ let app = new Vue ({
 					{term: 'tenuto', transleate: 'выдержанно', symbol: 'img/tocco/Music-tenuto.svg'},
 					{term: 'glissando', transleate: 'скользя', symbol: 'img/tocco/Music-glissando.svg'},
 				],
-				dinamica: [
+				[
 					{term: 'forte', transleate: 'громко', symbol: 'img/dinamica/Music-forte.svg'},
 					{term: 'piano', transleate: 'тихо', symbol: 'img/dinamica/Music-piano.svg'},
 					{term: 'mezzo forte', transleate: 'не очень громко', symbol: 'img/dinamica/Music-mezzoforte.svg'},
@@ -482,7 +483,7 @@ let app = new Vue ({
 					{term: 'poco a poco crecsendo', transleate: 'мало-помалу усиливая'},
 					{term: 'poco a poco diminuendo', transleate: 'мало-помалу стихая'},
 				],
-				simbolo: [
+				[
 					{term: 'реприза', transleate: 'повторение', symbol: 'img/simbolo/Music-repeat.png'},
 					{term: '', transleate: 'за первым разом на первую вольту, за вторым на вторую', symbol: 'img/simbolo/Music-volte.svg'},
 					{term: 'fermata', transleate: 'остановка', symbol: 'img/simbolo/Music-fermata.svg'},
@@ -492,7 +493,7 @@ let app = new Vue ({
 					{term: 'Segno', transleate: 'сеньо - знак', symbol: 'img/simbolo/Music-segno.png'},
 					{term: 'Lanterna', transleate: 'фонарь - знак', symbol: 'img/simbolo/Coda_sign.svg'}
 				],
-				natura: [
+				[
 					{term: 'dolche', transleate: 'нежно'},
 					{term: 'cantabile', transleate: 'певуче'},
 					{term: 'risoluto', transleate: 'решительно'},
@@ -516,7 +517,7 @@ let app = new Vue ({
 					{term: 'brilliante', transleate: 'блестяще'},
 					{term: 'energico', transleate: 'энергично'},
 				]		
-			}
+			]
 		],
 		term: 'Click to learn',
 		termSymbol: '',
@@ -530,31 +531,20 @@ let app = new Vue ({
 		answerOptions: [],
 		answer: {},
 	},
-	methods: {
+	methods: {			
 		genTerm: function () {
 			this.terms = []
-			
-			if (this.settingTerms == 'Tempo') {
-				this.terms = this.termsBase[this.settingClass].tempo
-			} else if (this.settingTerms == 'Tocco') {
-				this.terms = this.termsBase[this.settingClass].tocco
-			} else if (this.settingTerms == 'Dinamica') {
-				this.terms = this.termsBase[this.settingClass].dinamica
-			} else if (this.settingTerms == 'Simbolo') {
-				this.terms = this.termsBase[this.settingClass].simbolo
-			} else if (this.settingTerms == 'Natura') {
-				this.terms = this.termsBase[this.settingClass].natura
-			} else {
-				if (this.settingClass != 0) {
-					this.terms = this.termsBase[this.settingClass].tempo.concat(this.termsBase[this.settingClass].dinamica,this.termsBase[this.settingClass].tocco,this.termsBase[this.settingClass].simbolo, this.termsBase[this.settingClass].natura)
-				} else {
-					this.terms = this.termsBase[this.settingClass].tempo.concat(this.termsBase[this.settingClass].dinamica,this.termsBase[this.settingClass].tocco,this.termsBase[this.settingClass].simbolo)
-				}
-			}
 
-			if (this.settingClass == '0' && this.settingTerms == 'Natura') {
+			if (this.settingTerms == 5) {
+				for (var i = this.termsBase[this.settingClass].length - 1; i >= 0; i--) {
+					this.terms = this.terms.concat(this.termsBase[this.settingClass][i])
+				}
+			} else {
+				this.terms = this.termsBase[this.settingClass][this.settingTerms]
+			}	
+
+			if (this.settingClass == 0 && this.settingTerms == 4) {
 				this.attention = true
-				this.terms = this.terms = this.termsBase[this.settingClass].tempo.concat(this.termsBase[this.settingClass].dinamica,this.termsBase[this.settingClass].tocco,this.termsBase[this.settingClass].simbolo)
 			} else {
 				this.attention = false
 			}

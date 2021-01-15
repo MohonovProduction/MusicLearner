@@ -87,19 +87,19 @@
 					<div class="menu-setting-block">
 						<h2 class="menu">Whats terms to use for traning?</h2>
 						<select class="menu" v-model="settingTerms">
-							<option selected="">All</option>
-							<option>Tempo</option>
-							<option>Tocco</option>
-							<option>Dinamica</option>
-							<option>Simbolo</option>
-							<option>Natura</option>
+							<option value="5">All</option>
+							<option value="0">Tempo</option>
+							<option value="1">Tocco</option>
+							<option value="2">Dinamica</option>
+							<option value="3">Simbolo</option>
+							<option value="4">Natura</option>
 						</select>
 					</div>
 
 					<div class="menu-setting-block">
 						<h2 class="menu">Whats class of terms to use for traning?</h2>
 						<select class="menu" v-model="settingClass">
-							<option v-for="(terms, id) in termsBase" v-bind:value="id">{{termsBaseNames[id]}}</option>
+							<option v-for="(terms, id) in termsBase" v-bind:value="id">{{termsBaseClass[id]}}</option>
 						</select>
 					</div>
 
