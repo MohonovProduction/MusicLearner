@@ -52,6 +52,60 @@
 		}
 	}
 
+/* test */
+	.test {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		position: fixed;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100vh;
+
+		background: hsl(47, 95%, 95%);
+
+		z-index: 10;
+	}
+	.test-container {
+		max-width: 400px;
+		margin: 20px;
+	}
+	.test-ul {
+		padding: 40px;
+		margin: 0px;
+		list-style: none;
+
+		background: #fff;
+		box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
+	}
+
+	li.test-select {
+		margin-bottom: 30px;
+	}
+	select.test-select {
+		user-select: none;
+		outline: none;
+		border: none;
+		padding: 10px;
+		width: 100%;
+		color: #fff;
+		font-size: 1em;
+		background: hsl(47, 95%, 50%);
+	}
+	h2.test-select {
+		font-family: sans-serif;
+		color: #000;
+		margin: 0px 0px 10px 0px;
+	}
+
+	.test.button {
+		height: 50px;
+	}
+
 /* app */
 	.app-section {
 		width: 350px;
