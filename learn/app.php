@@ -15,7 +15,6 @@
 				v-on:click="genTerm"
 				>
 				<img v-bind:src="termSymbol" class="term">
-				<p class="term" v-if="hello">Нажми, что бы учить</p>
 				<p class="term" v-if="!hello">{{term}}</p>
 			</div>
 
@@ -71,4 +70,4 @@
 	</aside>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<script src="../scripts/app.js"></script>
+<script src="app.js"></script>
