@@ -15,13 +15,15 @@ let app = new Vue ({
 	data: {
 		/* styles */
 		show: false,
-		showMenu: false,
+		showMenu: true,
 		attention: false,
 		appIsNotWorking: false,
 
 		/* setings */
 		settingTerms: 5,
 		settingClass: 7,
+		countQuestion: 20,
+		counter: NaN,
 		termsBaseClass: ['1','2','3','4','5','7','8','9-11'],
 
 		/* data */
@@ -518,7 +520,7 @@ let app = new Vue ({
 				]		
 			]
 		],
-		term: 'Нажми, чтобы учиться',
+		term: '',
 		termSymbol: '',
 		options: [
 			'',
@@ -532,6 +534,12 @@ let app = new Vue ({
 	},
 	methods: {			
 		genTerm: function () {
+			if (this.countQuestion >= this.counter) {
+				counter++
+				
+			}
+
+			this.showMenu = false
 			this.terms = []
 
 			if (this.settingTerms == 5) {

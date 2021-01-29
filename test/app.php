@@ -1,10 +1,13 @@
 <div id="app">
-	<header>
+	<header class="test">
+		<div class="counter" v-bind:style="{width: counter + '+'}">
+			
+		</div>
 		<p class="attention" v-if="appIsNotWorking">Внимание! Технические работы</p>
 		<p class="attention" v-if="attention">Для первого класса термины в &laquo;Характере исполнения&raquo; не найдены. Пожалуйста измените настройки</p>
 	</header>
 
-	<main>
+	<main class="test">
 		<section class="app-section">
 			<div
 				v-bind:class="{
@@ -36,29 +39,35 @@
 		</section>
 	</main>
 
-	<aside class="test">
+	<aside v-bind:class="{hide: !showMenu, test: true}">
 		<div class="test-container">
 			<ul class="test-ul">
 				<li class="test-select">
 					<h2 class="test-select">Колличество вопросов</h2>
-					<select class="test-select">
-						<option>Lorem ipsum</option>
+					<div class="count">
+						<input type="range" min="10" max="50" class="test-select" v-model="countQuestion">
+						<output class="test-select">{{countQuestion}}</output>
+					</div>
+				</li>
+				<li class="test-select">
+					<h2 class="test-select">Класс</h2>
+					<select class="test-select" v-model="settingClass">
+						<option v-for="(terms, id) in termsBase" v-bind:value="id">{{termsBaseClass[id]}}</option>
 					</select>
 				</li>
 				<li class="test-select">
-					<h2 class="test-select">Колличество вопросов</h2>
-					<select class="test-select">
-						<option>Lorem ipsum</option>
-					</select>
-				</li>
-				<li class="test-select">
-					<h2 class="test-select">Колличество вопросов</h2>
-					<select class="test-select">
-						<option>Lorem ipsum</option>
+					<h2 class="test-select">Тип</h2>
+					<select class="test-select" v-model="settingTerms">
+						<option value="5">Все</option>
+						<option value="0">Темп</option>
+						<option value="1">Ритм</option>
+						<option value="2">Динамика</option>
+						<option value="3">Условные обозначения</option>
+						<option value="4">Характер исполнения</option>
 					</select>
 				</li>
 			</ul>
-			<button class="button test">Начать тест</button>
+			<button class="button test" v-on:click="genTerm">Начать тест</button>
 		</div>
 	</aside>
 
