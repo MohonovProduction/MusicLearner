@@ -1,7 +1,7 @@
 <div id="app">
 	<header>
-		<p class="attention" v-show="appIsNotWorking">Attention! Undermaintanance</p>
-		<p class="attention" v-show="attention">For First Class terms in nature is not found. Please change your settings</p>
+		<p class="attention" v-if="appIsNotWorking">Внимание! Технические работы</p>
+		<p class="attention" v-if="attention">Для первого класса термины в &laquo;Характере исполнения&raquo; не найдены. Пожалуйста измените настройки</p>
 	</header>
 
 	<main>
@@ -15,7 +15,7 @@
 				v-on:click="genTerm"
 				>
 				<img v-bind:src="termSymbol" class="term">
-				<p class="term" v-if="!hello">{{term}}</p>
+				<p class="term">{{term}}</p>
 			</div>
 
 			<transition name="fade">
