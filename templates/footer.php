@@ -1,21 +1,16 @@
 <footer>
 	<ul class="footer">
 		<li class="footer footer-language">
-			<a href="ru-ru.html" class="footer">
-				<svg class="icon footer">
-				  <use xlink:href="#translate"></use>
-				</svg>
-				<p>Русский</p>
-			</a>
+			<a href="../index.php">На главную</a>
 		</li>
 		<li class="footer" title="News and about project">
-			<a href="https://t.me/mohonovschannel" target="blank">News</a>
+			<a href="https://t.me/mohonovschannel" target="blank">Новости</a>
 		</li>
 		<li class="footer" title="Autor">
-			<a href="https://github.com/MohonovProduction" target="blank">Autor</a>
+			<a href="https://github.com/MohonovProduction" target="blank">Автор</a>
 		</li>
 		<li class="footer" title="More talkative and faster">
-			<a href="https://github.com/MohonovProduction/MusicLearner/releases/tag/1.2" target="blank">version 1.2</a>
+			<a href="https://github.com/MohonovProduction/MusicLearner/releases/tag/1.2" target="blank">версия 1.2</a>
 		</li>
 		<li class="footer" title="code = <3 = Saint-Petersburg">
 			<a href="https://github.com/MohonovProduction/musicLeaner" target="blank">

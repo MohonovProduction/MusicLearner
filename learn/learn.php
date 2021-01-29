@@ -1,7 +1,7 @@
 <?php
-	require '../layout.php';
+	require '../templates/header.php';
 
-	
+	require 'app.php';
 
-	require '../end.php';
+	require '../templates/footer.php';
 ?>
