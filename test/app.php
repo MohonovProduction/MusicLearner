@@ -1,8 +1,6 @@
 <div id="app">
 	<header class="test">
-		<div class="counter" v-bind:style="{width: counter + '+'}">
-			
-		</div>
+		<div class="counter" v-bind:style="{width: counter + '+'}"></div>
 		<p class="attention" v-if="appIsNotWorking">Внимание! Технические работы</p>
 		<p class="attention" v-if="attention">Для первого класса термины в &laquo;Характере исполнения&raquo; не найдены. Пожалуйста измените настройки</p>
 	</header>
@@ -15,14 +13,14 @@
 					correct: styleSetUp[4] == 1, 
 					incorrect: styleSetUp[4] == 2
 				}" 
-				v-on:click="genTerm"
+				v-on:click="test"
 				>
 				<img v-bind:src="termSymbol" class="term">
 				<p class="term">{{term}}</p>
 			</div>
 
 			<transition name="fade">
-				<div class="buttons" v-if="show">
+				<div class="buttons" v-if="showOptions">
 					<button 
 						v-bind:class="{
 							button: true, 
@@ -36,6 +34,7 @@
 					</button>
 				</div>
 			</transition>
+
 		</section>
 	</main>
 
@@ -67,7 +66,14 @@
 					</select>
 				</li>
 			</ul>
-			<button class="button test" v-on:click="genTerm">Начать тест</button>
+
+			<button class="button test-button" v-on:click="genTerm">Начать тест</button>
+		</div>
+	</aside>
+
+	<aside v-bind:class="{hide: !showResults, results}">
+		<div>
+			
 		</div>
 	</aside>
 

@@ -14,16 +14,19 @@ let app = new Vue ({
 	el: '#app',
 	data: {
 		/* styles */
-		show: false,
+		showOptions: false,
 		showMenu: true,
+		showResults: false,
+
 		attention: false,
 		appIsNotWorking: false,
+
+		counter: 0,
 
 		/* setings */
 		settingTerms: 5,
 		settingClass: 7,
 		countQuestion: 20,
-		counter: NaN,
 		termsBaseClass: ['1','2','3','4','5','7','8','9-11'],
 
 		/* data */
@@ -528,16 +531,13 @@ let app = new Vue ({
 			'',
 			''
 		],
+
 		styleSetUp: [0,0,0,0,0],
 		answerOptions: [],
 		answer: {},
 	},
 	methods: {			
 		genTerm: function () {
-			if (this.countQuestion >= this.counter) {
-				counter++
-				
-			}
 
 			this.showMenu = false
 			this.terms = []
@@ -556,7 +556,7 @@ let app = new Vue ({
 				this.attention = false
 			}
 
-			this.show = true
+			this.showOptions = true
 			this.styleSetUp = [0,0,0,0,0]
 
 			this.terms = shuffle(this.terms)
@@ -569,6 +569,25 @@ let app = new Vue ({
 				Vue.set(this.options, i, this.answerOptions[i].transleate)
 			}
 		},
+
+		test: function () {
+			if (this.countQuestion > 0) {
+				this.counter++
+				this.countQuestion--
+				
+				console.log(this.counter + ' ' + this.countQuestion)
+
+				this.genTerm()
+			} else {
+				this.showResults = true
+				this.results()
+			}
+		},
+
+		results: function () {
+
+		},
+
 		checkAnswer: function (id) {
 			if (this.answer == this.answerOptions[id]) {
 				Vue.set(this.styleSetUp, id, 1)
