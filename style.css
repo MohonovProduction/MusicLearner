@@ -124,6 +124,7 @@
 			justify-content: flex-start;
 			align-items: center;
 		}
+
 		input.test-select {
 			margin: 0;
 			color: #fff;
@@ -149,6 +150,45 @@
 		}
 
 	/* test-results */
+		.results-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			padding: 40px;
+			margin: 0px;
+			list-style: none;
+
+			height: 50vh;
+
+			font-family: sans-serif;
+
+			background: #fff;
+			box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
+		}
+		.result-diagram {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			height: 200px; 
+			width: 200px;
+
+			padding: 20px;
+			margin: 0 0 40px 0;
+
+			border: 5px solid hsl(47, 95%, 70%);
+			border-radius: 50%;
+		}
+		.result { 
+			font-size: 5em;
+			margin: 0;
+		}
+		.result-plain-text {
+			font-size: 1.5em;
+		}
+
 
 /* app */
 	.app-section {

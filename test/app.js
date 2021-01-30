@@ -16,17 +16,17 @@ let app = new Vue ({
 		/* styles */
 		showOptions: false,
 		showMenu: true,
-		showResults: false,
+		showResults: true,
 
 		attention: false,
 		appIsNotWorking: false,
 
-		counter: 0,
+		counter: 20,
 
 		/* setings */
+		countQuestion: 20,
 		settingTerms: 5,
 		settingClass: 7,
-		countQuestion: 20,
 		termsBaseClass: ['1','2','3','4','5','7','8','9-11'],
 
 		/* data */
@@ -539,7 +539,7 @@ let app = new Vue ({
 		incorrectIsWas: false,
 		correctAnswers: [],
 		incorrectAnswers: [],
-		correctCards: 0;
+		correctCards: 3,
 		result: 0,
 	},
 	methods: {			
@@ -584,13 +584,14 @@ let app = new Vue ({
 
 				this.genTerm()
 			} else {
-				this.showResults = true
 				this.results()
 			}
 		},
 
 		results: function () {
+			this.showResults = true
 
+			this.result = (Math.round((this.counter / 100) * this.correctCards)) * 100 
 		},
 
 		checkAnswer: function (id) {

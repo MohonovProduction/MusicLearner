@@ -5,38 +5,6 @@
 		<p class="attention" v-if="attention">Для первого класса термины в &laquo;Характере исполнения&raquo; не найдены. Пожалуйста измените настройки</p>
 	</header>
 
-	<main class="test">
-		<section class="app-section">
-			<div
-				v-bind:class="{
-					card: true, 
-					correct: styleSetUp[4] == 1, 
-					incorrect: styleSetUp[4] == 2
-				}" 
-				>
-				<img v-bind:src="termSymbol" class="term">
-				<p class="term">{{term}}</p>
-			</div>
-
-			<transition name="fade">
-				<div class="buttons" v-if="showOptions">
-					<button 
-						v-bind:class="{
-							button: true, 
-							correct: styleSetUp[id] == 1, 
-							incorrect: styleSetUp[id] == 2
-						}" 
-						v-for="(option, id) of options"
-						v-on:click="checkAnswer(id)"
-						>
-						{{ options[id] }}
-					</button>
-				</div>
-			</transition>
-
-		</section>
-	</main>
-
 	<aside v-bind:class="{'hide-to-top': !showMenu, 'test-menu': true}">
 		<div class="test-container">
 			<ul class="test-ul">
@@ -70,9 +38,44 @@
 		</div>
 	</aside>
 
-	<aside v-bind:class="{'hide-to-top': showResults, results}">
-		<div class="results-container">
-			<p>{{ result }}</p>
+	<main class="test">
+		<section class="app-section">
+			<div
+				v-bind:class="{
+					card: true, 
+					correct: styleSetUp[4] == 1, 
+					incorrect: styleSetUp[4] == 2
+				}" 
+				>
+				<img v-bind:src="termSymbol" class="term">
+				<p class="term">{{term}}</p>
+			</div>
+
+			<transition name="fade">
+				<div class="buttons" v-if="showOptions">
+					<button 
+						v-bind:class="{
+							button: true, 
+							correct: styleSetUp[id] == 1, 
+							incorrect: styleSetUp[id] == 2
+						}" 
+						v-for="(option, id) of options"
+						v-on:click="checkAnswer(id)"
+						>
+						{{ options[id] }}
+					</button>
+				</div>
+			</transition>
+
+		</section>
+	</main>
+
+	<aside v-bind:class="{'hide-to-top': !showResults, 'test-results': true}">
+		<div class="results-container" v-on:click="results">
+			<div class="result-diagram">
+				<p class="result">{{ result }}%</p>
+			</div>
+			<p class="result-plain-text">Правильных ответов</p>
 		</div>
 	</aside>
 
