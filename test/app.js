@@ -535,6 +535,12 @@ let app = new Vue ({
 		styleSetUp: [0,0,0,0,0],
 		answerOptions: [],
 		answer: {},
+
+		incorrectIsWas: false,
+		correctAnswers: [],
+		incorrectAnswers: [],
+		correctCards: 0;
+		result: 0,
 	},
 	methods: {			
 		genTerm: function () {
@@ -572,10 +578,9 @@ let app = new Vue ({
 
 		test: function () {
 			if (this.countQuestion > 0) {
+				this.incorrectIsWas = false
 				this.counter++
 				this.countQuestion--
-				
-				console.log(this.counter + ' ' + this.countQuestion)
 
 				this.genTerm()
 			} else {
@@ -592,10 +597,19 @@ let app = new Vue ({
 			if (this.answer == this.answerOptions[id]) {
 				Vue.set(this.styleSetUp, id, 1)
 				Vue.set(this.styleSetUp, 4, 1)
-				setTimeout(this.genTerm, 1000)
+
+				if (!this.incorrectIsWas) {
+					this.correctAnswers.push(this.answer)
+					this.correctCards++
+				}
+
+				setTimeout(this.test, 1000)
 			} else {
 				Vue.set(this.styleSetUp, id, 2)
 				Vue.set(this.styleSetUp, 4, 2)
+
+				this.incorrectIsWas = true
+				this.incorrectAnswers.push(this.answerOptions[id])
 			}
 		}
 	}

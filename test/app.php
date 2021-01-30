@@ -13,7 +13,6 @@
 					correct: styleSetUp[4] == 1, 
 					incorrect: styleSetUp[4] == 2
 				}" 
-				v-on:click="test"
 				>
 				<img v-bind:src="termSymbol" class="term">
 				<p class="term">{{term}}</p>
@@ -38,7 +37,7 @@
 		</section>
 	</main>
 
-	<aside v-bind:class="{hide: !showMenu, test: true}">
+	<aside v-bind:class="{'hide-to-top': !showMenu, 'test-menu': true}">
 		<div class="test-container">
 			<ul class="test-ul">
 				<li class="test-select">
@@ -71,9 +70,9 @@
 		</div>
 	</aside>
 
-	<aside v-bind:class="{hide: !showResults, results}">
-		<div>
-			
+	<aside v-bind:class="{'hide-to-top': showResults, results}">
+		<div class="results-container">
+			<p>{{ result }}</p>
 		</div>
 	</aside>
 
