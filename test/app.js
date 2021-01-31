@@ -16,7 +16,7 @@ let app = new Vue ({
 		/* styles */
 		showOptions: false,
 		showMenu: true,
-		showResults: true,
+		showResults: false,
 
 		attention: false,
 		appIsNotWorking: false,
