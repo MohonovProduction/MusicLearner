@@ -1,7 +1,7 @@
 <footer>
 	<ul class="footer">
 		<li class="footer footer-language">
-			<a href="../index.php">На главную</a>
+			<a href="index.php">На главную</a>
 		</li>
 		<li class="footer" title="News and about project">
 			<a href="https://t.me/mohonovschannel" target="blank">Новости</a>

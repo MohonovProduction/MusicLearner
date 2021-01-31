@@ -23,6 +23,7 @@ let app = new Vue ({
 
 		/* setings */
 		countQuestion: 20,
+		questions: 0,
 		settingTerms: 5,
 		settingClass: 7,
 		termsBaseClass: ['1','2','3','4','5','7','8','9-11'],
@@ -576,6 +577,10 @@ let app = new Vue ({
 		test: function () {
 			this.showMenu = false
 			this.showResults = false
+
+			if (this.counter === 0) {
+				this.questions = this.countQuestion
+			}
 
 			if (this.countQuestion > 0) {
 				this.incorrectIsWas = false

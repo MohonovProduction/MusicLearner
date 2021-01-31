@@ -1,6 +1,10 @@
 <div id="app">
 	<header class="test">
-		<div class="counter" v-bind:style="{width: counter + '+'}"></div>
+		<div class="counter" 
+			 v-bind:style="{width: counter / questions * 100 + '%'}"
+			 >
+			 </div>
+
 		<p class="attention" v-if="appIsNotWorking">Внимание! Технические работы</p>
 		<p class="attention" v-if="attention">Для первого класса термины в &laquo;Характере исполнения&raquo; не найдены. Пожалуйста измените настройки</p>
 	</header>
@@ -81,9 +85,13 @@
 				<p class="result-plain-text">Правильных ответов</p>
 			</div>
 
-			<button class="button collection-animate" v-on:click="test">Пройти ещё раз</button>
+			<button class="button collection-animate" v-on:click="test">
+				<a href="test.php" class="menu-link">
+					<p class="link-text">Пройти ещё раз</p>
+				</a>
+			</button>
 			<button class="button collection-animate">
-				<a href="../learn/learn.php" class="menu-link">
+				<a href="learn.php" class="menu-link">
 					<p class="link-text">Подучить</p>
 				</a>
 			</button>
@@ -92,4 +100,4 @@
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<script src="app.js"></script>
+<script src="test/app.js"></script>

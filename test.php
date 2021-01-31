@@ -1,8 +1,8 @@
-<?php 
-	$title = 'menu';
+<?php
+	$title = 'test';
 	require 'templates/header.php';
 
-	require 'main.php';
+	require 'test/app.php';
 
 	require 'templates/footer.php';
- ?>
+?>

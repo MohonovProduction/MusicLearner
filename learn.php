@@ -1,8 +1,8 @@
-<?php 
-	$title = 'menu';
+<?php
+	$title = 'Learn term';
 	require 'templates/header.php';
 
-	require 'main.php';
+	require 'learn/app.php';
 
 	require 'templates/footer.php';
- ?>
+?>
