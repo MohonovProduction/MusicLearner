@@ -9,6 +9,7 @@
 			<div
 				v-bind:class="{
 					card: true, 
+					'collection-animate': true,
 					correct: styleSetUp[4] == 1, 
 					incorrect: styleSetUp[4] == 2
 				}" 
@@ -22,6 +23,7 @@
 				<div class="buttons" v-if="show">
 					<button 
 						v-bind:class="{
+							'collection-animate': true,
 							button: true, 
 							correct: styleSetUp[id] == 1, 
 							incorrect: styleSetUp[id] == 2

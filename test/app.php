@@ -7,7 +7,7 @@
 
 	<aside v-bind:class="{'hide-to-top': !showMenu, 'test-menu': true}">
 		<div class="test-container">
-			<ul class="test-ul">
+			<ul class="test-ul collection">
 				<li class="test-select">
 					<h2 class="test-select">Колличество вопросов</h2>
 					<div class="count">
@@ -34,7 +34,7 @@
 				</li>
 			</ul>
 
-			<button class="button test-button" v-on:click="genTerm">Начать тест</button>
+			<button class="button collection-animate" v-on:click="test">Начать тест</button>
 		</div>
 	</aside>
 
@@ -43,6 +43,7 @@
 			<div
 				v-bind:class="{
 					card: true, 
+					collection: true,
 					correct: styleSetUp[4] == 1, 
 					incorrect: styleSetUp[4] == 2
 				}" 
@@ -55,9 +56,10 @@
 				<div class="buttons" v-if="showOptions">
 					<button 
 						v-bind:class="{
+							'collection-animate': true,
 							button: true, 
-							correct: styleSetUp[id] == 1, 
-							incorrect: styleSetUp[id] == 2
+							correct: styleSetUp[id] === 1, 
+							incorrect: styleSetUp[id] === 2
 						}" 
 						v-for="(option, id) of options"
 						v-on:click="checkAnswer(id)"
@@ -71,11 +73,20 @@
 	</main>
 
 	<aside v-bind:class="{'hide-to-top': !showResults, 'test-results': true}">
-		<div class="results-container" v-on:click="results">
-			<div class="result-diagram">
-				<p class="result">{{ result }}%</p>
+		<div>
+			<div class="results-container collection">
+				<div class="result-diagram">
+					<p class="result">{{ result }}%</p>
+				</div>
+				<p class="result-plain-text">Правильных ответов</p>
 			</div>
-			<p class="result-plain-text">Правильных ответов</p>
+
+			<button class="button collection-animate" v-on:click="test">Пройти ещё раз</button>
+			<button class="button collection-animate">
+				<a href="../learn/learn.php" class="menu-link">
+					<p class="link-text">Подучить</p>
+				</a>
+			</button>
 		</div>
 	</aside>
 

@@ -21,8 +21,6 @@ let app = new Vue ({
 		attention: false,
 		appIsNotWorking: false,
 
-		counter: 20,
-
 		/* setings */
 		countQuestion: 20,
 		settingTerms: 5,
@@ -536,16 +534,15 @@ let app = new Vue ({
 		answerOptions: [],
 		answer: {},
 
+		counter: 0,
 		incorrectIsWas: false,
 		correctAnswers: [],
 		incorrectAnswers: [],
-		correctCards: 3,
+		correctCards: 0,
 		result: 0,
 	},
 	methods: {			
 		genTerm: function () {
-
-			this.showMenu = false
 			this.terms = []
 
 			if (this.settingTerms == 5) {
@@ -577,6 +574,9 @@ let app = new Vue ({
 		},
 
 		test: function () {
+			this.showMenu = false
+			this.showResults = false
+
 			if (this.countQuestion > 0) {
 				this.incorrectIsWas = false
 				this.counter++
@@ -591,7 +591,7 @@ let app = new Vue ({
 		results: function () {
 			this.showResults = true
 
-			this.result = (Math.round((this.counter / 100) * this.correctCards)) * 100 
+			this.result = Math.round(this.correctCards / this.counter * 100)
 		},
 
 		checkAnswer: function (id) {

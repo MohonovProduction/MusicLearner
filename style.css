@@ -36,11 +36,11 @@
 
 		width: 800px;
 	}	
-	.main-menu-link:link {
+	.menu-link:link {
 		text-decoration: none;
 		color: #000;
 	}
-	.main-menu-link:visited {
+	.menu-link:visited {
 		text-decoration: none;
 		color: #000;
 	}
@@ -75,18 +75,17 @@
 		justify-content: center;
 		align-items: center;
 
-		position: fixed;
-		top: 0;
-		left: 0;
-
 		width: 100%;
 		height: 100vh;
 
 		background: hsl(47, 95%, 95%);
 
-		z-index: 10;
+		position: absolute;
+		left: 0px;
+		top: 0px;
 
 		transform: translateX(0%);
+		z-index: 10;
 		opacity: 1;
 		transition: 1s;
 	}
@@ -100,9 +99,6 @@
 			padding: 40px;
 			margin: 0px;
 			list-style: none;
-
-			background: #fff;
-			box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
 		}
 
 		li.test-select {
@@ -163,9 +159,6 @@
 			height: 50vh;
 
 			font-family: sans-serif;
-
-			background: #fff;
-			box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
 		}
 		.result-diagram {
 			display: flex;
@@ -189,13 +182,9 @@
 			font-size: 1.5em;
 		}
 
-
 /* app */
 	.app-section {
 		width: 350px;
-	}
-	.app {
-		margin: 40px 0px;
 	}
 
 	@media screen and (max-width: 479px) {
@@ -224,21 +213,6 @@
 		align-items: center;
 		width: 100%;
 		height: 30vh;	
-		background: #fff;
-		transition: 0.3s;
-		box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
-	}
-	.card:hover {
-		cursor: pointer;
-
-		transform: translate(-5px, -5px);
-		box-shadow: 15px 15px 0px 0px hsl(47, 95%, 70%);
-		transition: 0.3s;
-	}
-	.card:active {
-		transform: translate(0px, 0px);
-		box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
-		transition: 0.3s;
 	}
 
 	img.term {
@@ -256,110 +230,8 @@
 		flex-direction: column;
 		width: 100%;
 	}
-	.button {
-		position: relative;
-		appearance: none;
-		user-select: none;
-		border-radius: 0px;
-		border: none;
-		background: #fff;
-		outline: none;
-
-		font-family: 'Georgia Pro', serif;
-		margin-top: 25px;
-		padding: 10px;
-		font-size: 1.5em;
-		box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
-		transition: 0.3s;
-	}
-	.button:hover {
-		cursor: pointer;
-
-		transform: translate(-5px, -5px);
-		box-shadow: 15px 15px 0px 0px hsl(47, 95%, 70%);
-		transition: 0.3s;
-	}
-	.button:active {
-		transform: translate(0px, 0px);
-		box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
-		transition: 0.3s;
-	}
-
-	.correct {
-		box-shadow: 5px 5px 0px 0px hsl(104, 66%, 67%);
-		transform: translate(0px, 0px);
-	}
-	.correct:hover {
-		box-shadow: 15px 15px 0px 0px hsl(104, 66%, 67%);
-		transform: translate(-5px, -5px);
-	}
-	.correct:active {
-		box-shadow: 5px 5px 0px 0px hsl(104, 66%, 67%);
-		transform: translate(0px, 0px);
-	}
-
-	.incorrect {
-		box-shadow: 5px 5px 0px 0px hsl(347, 82%, 41%);
-		transform: translate(0px, 0px);
-	}
-	.incorrect:hover {
-		box-shadow: 15px 15px 0px 0px hsl(347, 82%, 41%);
-		transform: translate(-5px, -5px);
-	}
-	.incorrect:active {
-		box-shadow: 5px 5px 0px 0px hsl(347, 82%, 41%);
-		transform: translate(0px, 0px);
-	}
-
-	/* mobile animation*/
-		@media screen and (max-width: 479px) {
-			.card:hover {
-				transform: translate(0px, 0px);
-				box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
-				transition: 0.3s;
-			}
-			.card:active {
-				transform: translate(5px, 5px);
-				box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
-				transition: 0.3s;
-			}
-
-			.button:hover {
-				transform: translate(0px, 0px);
-				box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
-				transition: 0.3s;
-			}
-			.button:active {
-				transform: translate(-5px, -5px);
-				box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
-				transition: 0.3s;
-			}
-
-			.correct:hover {
-				box-shadow: 5px 5px 0px 0px hsl(104, 66%, 67%);
-				transform: translate(0px, 0px);
-			}
-			.correct:active {
-				box-shadow: 5px 5px 0px 0px hsl(104, 66%, 67%);
-				transform: translate(5px, 5px);
-			}
-			.incorrect:hover {
-				box-shadow: 5px 5px 0px 0px hsl(347, 82%, 41%);
-				transform: translate(0px, 0px);
-			}
-			.incorrect:active {
-				box-shadow: 5px 5px 0px 0px hsl(347, 82%, 41%);
-				transform: translate(5px, 5px);
-			}
-		}
 
 /* animation */
-	.fade-enter-active {
-		transition: opacity .5s;
-	}
-	.fade-enter, .fade-leave-to {
-	}
-
 	.hide-to-top {
 		transform: translateY(-20%);
 		opacity: 0;
@@ -575,3 +447,115 @@
 		transition: 0.3s;
 	}
 	
+/* components */
+	.collection {
+		background: #fff;
+		box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
+	}
+
+	.collection-animate {
+		background: #fff;
+		box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
+		transition: 0.3s;
+	}
+	.collection-animate:hover {
+		cursor: pointer;
+
+		transform: translate(-2px, -2px);
+		box-shadow: 12px 12px 0px 0px hsl(47, 95%, 70%);
+		transition: 0.3s;
+	}
+	.collection-animate:active {
+		background: #fff;
+		box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
+		transition: 0.3s;
+	}
+
+	@media (max-width: 500px) {
+		.collection-animate:hover {
+			box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
+			transform: translate(0px, 0px);
+		}
+		.collection-animate:active {
+			transform: translate(10px, 10px);
+			box-shadow: 5px 5px 0px 0px hsl(47, 95%, 70%);
+		}
+	}
+
+	.button {
+		position: relative;
+		appearance: none;
+		user-select: none;
+		border-radius: 0px;
+		border: none;
+		outline: none;
+
+		width: 100%;
+
+		font-size: 1.5em;
+		font-family: 'Georgia Pro', serif;
+
+		margin-top: 25px;
+		padding: 10px;
+	}
+
+	.correct {
+		box-shadow: 5px 5px 0px 0px hsl(104, 66%, 67%);
+		transition: 0.3s;
+	}
+	.correct:hover {
+		box-shadow: 12px 12px 0px 0px hsl(104, 66%, 67%);
+		transform: translate(-2px, -2px);
+	}
+	.correct:active {
+		box-shadow: 5px 5px 0px 0px hsl(104, 66%, 67%);
+	}
+
+	.incorrect {
+		box-shadow: 5px 5px 0px 0px hsl(347, 82%, 41%);
+		transition: 0.3s;
+	}
+	.incorrect:hover {
+		box-shadow: 12px 12px 0px 0px hsl(347, 82%, 41%);
+		transform: translate(-2px, -2px);
+	}
+	.incorrect:active {
+		box-shadow: 5px 5px 0px 0px hsl(347, 82%, 41%);
+	}
+
+	@media (max-width: 500px) {
+		.correct:hover {
+			box-shadow: 5px 5px 0px 0px hsl(104, 66%, 67%);
+			transform: translate(0px, 0px);
+		}
+		.correct:active {
+			box-shadow: 5px 5px 0px 0px hsl(104, 66%, 67%);
+			transform: translate(5px, 5px);
+		}
+
+		.incorrect:hover {
+			box-shadow: 5px 5px 0px 0px hsl(347, 82%, 41%);
+			transform: translate(0px, 0px);
+		}
+		.incorrect:active {
+			box-shadow: 5px 5px 0px 0px hsl(347, 82%, 41%);
+			transform: translate(5px, 5px);
+		}
+	}
+
+	.menu-link {
+		width: 100%;
+		margin: 0;
+		margin-top: 20px;
+	}
+	.link-text {
+		margin: 0;
+	}
+	.menu-link:link {
+		text-decoration: none;
+		color: #000;
+	}
+	.menu-link:visited {
+		text-decoration: none;
+		color: #000;
+	}
