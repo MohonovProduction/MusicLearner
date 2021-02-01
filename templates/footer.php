@@ -10,7 +10,7 @@
 			<a href="https://github.com/MohonovProduction" target="blank">Автор</a>
 		</li>
 		<li class="footer" title="More talkative and faster">
-			<a href="https://github.com/MohonovProduction/MusicLearner/releases/tag/1.2" target="blank">версия 1.2</a>
+			<a href="https://github.com/MohonovProduction/MusicLearner/releases/tag/1.2" target="blank">v1.3</a>
 		</li>
 		<li class="footer" title="code = <3 = Saint-Petersburg">
 			<a href="https://github.com/MohonovProduction/musicLeaner" target="blank">

@@ -80,16 +80,20 @@
 		<div>
 			<div class="results-container collection">
 				<div class="result-diagram">
+					<svg class="diagram" v-bind:data-percent="result">
+						<circle r="100" cx="50%" cy="50%" />
+					</svg>
 					<p class="result">{{ result }}%</p>
 				</div>
 				<p class="result-plain-text">Правильных ответов</p>
 			</div>
 
-			<button class="button collection-animate" v-on:click="test">
+			<button class="button collection-animate">
 				<a href="test.php" class="menu-link">
 					<p class="link-text">Пройти ещё раз</p>
 				</a>
 			</button>
+
 			<button class="button collection-animate">
 				<a href="learn.php" class="menu-link">
 					<p class="link-text">Подучить</p>

@@ -584,6 +584,7 @@ let app = new Vue ({
 
 			if (this.countQuestion > 0) {
 				this.incorrectIsWas = false
+
 				this.counter++
 				this.countQuestion--
 
@@ -597,6 +598,13 @@ let app = new Vue ({
 			this.showResults = true
 
 			this.result = Math.round(this.correctCards / this.counter * 100)
+
+			let round = document.querySelector('.diagram')
+		    let roundRadius = round.querySelector('circle').getAttribute('r')
+		    let roundPercent = this.result
+		    let roundCircum = 2 * roundRadius * Math.PI
+		    let roundDraw = roundPercent * roundCircum / 100
+		  	round.style.strokeDasharray =  roundDraw  + ' 999'
 		},
 
 		checkAnswer: function (id) {
