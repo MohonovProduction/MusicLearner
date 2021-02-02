@@ -77,7 +77,7 @@
 	</main>
 
 	<aside v-bind:class="{'hide-to-top': !showResults, 'test-results': true}">
-		<div>
+		<div>	
 			<div class="results-container collection">
 				<div class="result-diagram">
 					<svg class="diagram" v-bind:data-percent="result">
