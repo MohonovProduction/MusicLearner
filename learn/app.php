@@ -4,7 +4,7 @@
 		<p class="attention" v-if="attention">Для первого класса термины в &laquo;Характере исполнения&raquo; не найдены. Пожалуйста измените настройки</p>
 	</header>
 
-	<main>
+	<main class="learn">
 		<section class="app-section">
 			<div
 				v-bind:class="{

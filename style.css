@@ -66,6 +66,7 @@
 	}
 
 	header.test, main.test {
+		margin-top: 20px;
 		width: 100%;
 	}
 
@@ -211,11 +212,9 @@
 		.app-section {
 			width: 80%;
 		}
-		.app {
-			margin: 50px 0px;
-		}
 
-		main {
+		main.learn {
+			margin-top: 50px;
 			width: 100%;
 		}
 	}
@@ -378,7 +377,6 @@
 		justify-content: center;
 
 		width: calc(100% - 50px);
-		min-height: 60px;
 
 		margin-right: 50px;
 	}
